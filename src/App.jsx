@@ -51,6 +51,7 @@ function StoryBlock({ side = 'right', children, delay = 0 }) {
 export default function App() {
   const [activeSection, setActiveSection] = useState('prologue')
   const [activeTheme, setActiveTheme] = useState('amber')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const sections = document.querySelectorAll('section[id], header[id]')
@@ -80,19 +81,51 @@ export default function App() {
       <nav className="navbar">
         <div className="container nav-container">
           <div className="logo">M.KILLEDAR<span>//DEV</span></div>
+
+          {/* Desktop links */}
           <ul className="nav-links">
-            {[['prologue','Prologue'],['origin','Ch.1 Origin'],['craft','Ch.2 Craft'],['works','Ch.3 Works'],['journey','Ch.4 Journey'],['connect','Epilogue']].map(([id, label]) => (
+            {[['prologue','Prologue'],['origin','Ch.1 Origin'],['craft','Ch.2 Craft'],['works','Ch.3 Works'],['journey','Ch.4 Journey'],['hire','Ch.5 Hire Me'],['connect','Epilogue']].map(([id, label]) => (
               <li key={id}>
                 <a href={`#${id}`} className={`nav-link ${activeSection === id ? 'active' : ''}`}>{label}</a>
               </li>
             ))}
           </ul>
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+
+          {/* Desktop CTA buttons */}
+          <div className="nav-cta-desktop" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
             <a href="/mouiezuddin_resume.pdf" download="Mouiezuddin_Killedar_Resume.pdf" className="btn btn-secondary" style={{ padding: '0.65rem 1.25rem', fontSize: '0.72rem' }}>RÉSUMÉ</a>
             <a href="mailto:killedarmouiezuddin@gmail.com" className="btn" style={{ padding: '0.65rem 1.25rem', fontSize: '0.72rem' }}>CONNECT</a>
           </div>
+
+          {/* Hamburger — mobile only */}
+          <button
+            className={`nav-hamburger ${mobileMenuOpen ? 'open' : ''}`}
+            aria-label="Toggle navigation menu"
+            onClick={() => setMobileMenuOpen(o => !o)}
+          >
+            <span /><span /><span />
+          </button>
         </div>
       </nav>
+
+      {/* Mobile drawer */}
+      <ul className={`nav-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+        {[['prologue','Prologue'],['origin','Ch.1 Origin'],['craft','Ch.2 Craft'],['works','Ch.3 Works'],['journey','Ch.4 Journey'],['hire','Ch.5 Hire Me'],['connect','Epilogue']].map(([id, label]) => (
+          <li key={id}>
+            <a
+              href={`#${id}`}
+              className={`nav-link ${activeSection === id ? 'active' : ''}`}
+              onClick={() => setMobileMenuOpen(false)}
+            >{label}</a>
+          </li>
+        ))}
+        <li>
+          <div className="nav-drawer-cta">
+            <a href="/mouiezuddin_resume.pdf" download="Mouiezuddin_Killedar_Resume.pdf" className="btn btn-secondary" style={{ padding: '0.65rem 1.25rem', fontSize: '0.72rem' }}>RÉSUMÉ</a>
+            <a href="mailto:killedarmouiezuddin@gmail.com" className="btn" style={{ padding: '0.65rem 1.25rem', fontSize: '0.72rem' }}>CONNECT</a>
+          </div>
+        </li>
+      </ul>
 
       {/* ── PROLOGUE / HERO ─────────────────────────────────────────────── */}
       <header id="prologue" className="prologue-hero">
@@ -104,11 +137,16 @@ export default function App() {
           <div className="prologue-eyebrow">— A Developer's Story —</div>
           <h1 className="prologue-name">Mouiezuddin<br />Killedar</h1>
           <p className="prologue-role">Full Stack Python Developer · Software Engineer</p>
+          <div className="freelance-availability-badge">
+            <span className="availability-dot" />
+            <span>Available for Freelance</span>
+          </div>
           <p className="prologue-tagline">
             Every great product begins with a problem worth solving. This is the story of how I learned to build things that matter — one line of code, one shipped feature, one solved constraint at a time.
           </p>
           <div className="prologue-cta">
             <a href="#origin" className="btn">Read the Story ↓</a>
+            <a href="#hire" className="btn" style={{ borderColor: 'var(--secondary)', background: 'linear-gradient(180deg,#e0f2fe 0%,#bae6fd 100%)', color: '#0369a1' }}>Hire Me ✦</a>
             <a href="/mouiezuddin_resume.pdf" download className="btn btn-secondary" style={{ borderColor: 'var(--primary)', color: 'var(--primary)' }}>Download Résumé</a>
           </div>
           <div className="prologue-scroll-hint">
@@ -294,6 +332,122 @@ export default function App() {
               </ul>
             </div>
           </StoryBlock>
+        </section>
+
+        {/* ── HIRE ME / FREELANCE ── clean full-width section ─────────── */}
+        <section id="hire" className="hire-section">
+          <div className="hire-container">
+
+            {/* Section header */}
+            <div className="hire-header">
+              <span className="hire-eyebrow">Open for Hire</span>
+              <h2 className="hire-title">Let's Build Something Together</h2>
+              <p className="hire-subtitle">
+                I take on freelance projects and contract work — from focused one-off deliverables to long-term product partnerships.
+              </p>
+              <div className="hire-status-bar">
+                <span className="availability-dot availability-dot--lg" />
+                <span className="hire-status-text">Currently Available · Response within 24h</span>
+                <a href="mailto:killedarmouiezuddin@gmail.com" className="btn" style={{ marginLeft: 'auto' }}>Start a Project →</a>
+              </div>
+            </div>
+
+            {/* Services */}
+            <div className="hire-section-label">What I Offer</div>
+            <div className="hire-services-grid">
+              {[
+                {
+                  icon: '⚙',
+                  title: 'Backend APIs & Systems',
+                  desc: 'Scalable REST APIs with Django / Flask, JWT auth, RBAC, PostgreSQL schema design, ORM optimisation, and full Pytest coverage.',
+                  tags: ['Django', 'Flask', 'DRF', 'PostgreSQL', 'REST API', 'JWT'],
+                  accent: 'primary',
+                },
+                {
+                  icon: '✦',
+                  title: 'Full-Stack Web Apps',
+                  desc: 'End-to-end product delivery — React frontend wired to a Python backend, deployed on Render / Vercel with CI/CD pipelines ready to go.',
+                  tags: ['React', 'Python', 'Full-Stack', 'CI/CD', 'Vercel', 'Render'],
+                  accent: 'secondary',
+                },
+                {
+                  icon: '◈',
+                  title: 'DevOps & Deployment',
+                  desc: 'Docker containerisation, GitHub Actions automation, server hardening, HTTPS setup, and performance tuning so your app runs reliably at scale.',
+                  tags: ['Docker', 'GitHub Actions', 'Nginx', 'Linux', 'HTTPS'],
+                  accent: 'green',
+                },
+              ].map(svc => (
+                <div key={svc.title} className={`hire-service-card hire-service-card--${svc.accent}`}>
+                  <div className={`service-icon service-icon--${svc.accent}`}>{svc.icon}</div>
+                  <h3 className="hire-card-title">{svc.title}</h3>
+                  <p className="hire-card-desc">{svc.desc}</p>
+                  <div className="tag-cloud" style={{ marginTop: '1.25rem' }}>
+                    {svc.tags.map(t => <code key={t} className="tag">{t}</code>)}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* What I Can Build */}
+            <div className="hire-section-label" style={{ marginTop: '4rem' }}>What I Can Build For You</div>
+            <div className="hire-builds-grid">
+              {[
+                {
+                  icon: '🛒',
+                  title: 'E-Commerce Platforms',
+                  desc: 'Full online stores with product catalogs, cart & checkout flows, payment integration, order tracking, and admin dashboards.',
+                  tags: ['Django', 'React', 'PostgreSQL', 'Stripe'],
+                },
+                {
+                  icon: '📊',
+                  title: 'Admin Dashboards',
+                  desc: 'Data-rich internal tools with role-based access, analytics charts, user management, and real-time reporting.',
+                  tags: ['React', 'DRF', 'JWT', 'PostgreSQL'],
+                },
+                {
+                  icon: '🔌',
+                  title: 'REST APIs & Backends',
+                  desc: 'Production-ready APIs with authentication, rate limiting, versioning, and full test suites — ready to power any frontend or mobile app.',
+                  tags: ['Django REST', 'Flask', 'JWT', 'Pytest'],
+                },
+                {
+                  icon: '📝',
+                  title: 'Blogs & CMS Sites',
+                  desc: 'Content-driven platforms with rich-text editing, category management, author roles, SEO-friendly URLs, and RSS support.',
+                  tags: ['Django', 'PostgreSQL', 'Bootstrap'],
+                },
+                {
+                  icon: '💊',
+                  title: 'Healthcare & Tracker Apps',
+                  desc: 'Calorie counters, medication reminders, appointment schedulers — secure, user-scoped apps with clean data models.',
+                  tags: ['Flask', 'SQLite', 'JavaScript', 'REST API'],
+                },
+                {
+                  icon: '🚀',
+                  title: 'Landing Pages & Portfolios',
+                  desc: 'Fast, visually striking sites with animations, contact forms, and smooth scroll — optimised and deployed to production in days.',
+                  tags: ['React', 'Vite', 'CSS', 'Vercel'],
+                },
+              ].map(item => (
+                <div key={item.title} className="hire-build-card">
+                  <div className="hire-build-icon">{item.icon}</div>
+                  <h3 className="hire-card-title">{item.title}</h3>
+                  <p className="hire-card-desc">{item.desc}</p>
+                  <div className="tag-cloud" style={{ marginTop: '1rem' }}>
+                    {item.tags.map(t => <code key={t} className="tag">{t}</code>)}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA strip */}
+            <div className="hire-cta-strip">
+              <p className="hire-cta-text">Have something else in mind? Let's figure it out together.</p>
+              <a href="mailto:killedarmouiezuddin@gmail.com" className="btn">Get in Touch →</a>
+            </div>
+
+          </div>
         </section>
 
         {/* ── EPILOGUE / CONTACT ──────────────────────────────────────── */}

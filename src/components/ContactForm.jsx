@@ -70,7 +70,7 @@ export default function ContactForm() {
             required
           ></textarea>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1.5rem' }}>
+        <div className="contact-buttons-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1.5rem' }}>
           <button 
             className="btn" 
             type="button" 
