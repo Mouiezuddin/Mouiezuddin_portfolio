@@ -65,12 +65,16 @@ export default function App() {
   const currentThemeColors = THEMES[activeTheme]?.colors || THEMES.amber.colors
 
   const projects = [
-    { id: '01', date: 'Feb 2024', title: 'Library Management System', story: 'The first real battle. Replaced brittle spreadsheets for 50+ concurrent users, carved search latency from 2.5s down to 0.3s, and shipped RBAC across three roles.', tags: ['Django 4.2', 'SQLite', 'Bootstrap 5'], live: 'https://librarymanagementsystem-0cty.onrender.com', repo: 'https://github.com/Mouiezuddin', status: 'LIVE' },
-    { id: '02', date: 'Mar 2024', title: 'Restaurant & Ordering Platform', story: 'An e-commerce engine with live menu catalogs, inventory sync, and payment routing. Three user roles, 500+ concurrent order pipelines — handled without breaking a sweat.', tags: ['Django', 'PostgreSQL', 'React', 'REST API'], repo: 'https://github.com/Mouiezuddin', status: 'BACKEND' },
-    { id: '03', date: 'Apr 2024', title: "Developer's Tale Blog", story: 'A writing platform built for developers, with rich-text editing, category filtering, and admin moderation. Deployed and humming at 99%+ uptime.', tags: ['Django', 'PostgreSQL', 'Bootstrap 5'], live: 'https://developers-tale.onrender.com', repo: 'https://github.com/Mouiezuddin/Blog_platform', status: 'LIVE' },
-    { id: '04', date: 'Apr 2024', title: 'Calorie Tracker', story: 'A health analytics engine that logs 500+ food items, visualises weekly trends, and serves nutrition data through a clean REST layer. 1000+ daily inputs per user, zero slowdowns.', tags: ['Django ORM', 'SQLite', 'JavaScript'], repo: 'https://github.com/Mouiezuddin/Calories_Counter', status: 'DEV' },
-    { id: '05', date: 'Mar 2024', title: 'SpendWise Expenses', story: 'Personal finance tracking with Flask blueprints for clean modular structure, session-secured CRUD, and dynamic category breakdowns.', tags: ['Flask', 'Blueprints', 'SQLite'], repo: 'https://github.com/Mouiezuddin/Expense_tracker', status: 'DEV' },
-    { id: '06', date: 'Feb 2024', title: 'MedRemind System', story: 'An async reminder engine with secure user profiles, dosage triggers, and real-time UI rendering — managing 100+ concurrent medication schedules reliably.', tags: ['Flask', 'REST API', 'JavaScript'], repo: 'https://github.com/Mouiezuddin/Medicine_remainder', status: 'DEV' },
+    {
+      id: '01',
+      date: 'June 2026 – Present',
+      title: 'Royal Enterprises — Battery & Lighting Stock Management System',
+      story: 'Full-stack, enterprise-grade inventory and sales portal built for battery, inverter, solar power, and lighting hubs (Okaya, Exide, Amaron, Livguard). Features real-time stock control with threshold alerts, audit-logged stock in/out, 1-click WhatsApp receipts, BatteryHub AI Sales Analyst chatbot (English & Hinglish), Instagram-style PWA, and security with JWT token rotation & 30-min lockout.',
+      tags: ['React 19', 'Vite 6', 'Tailwind CSS', 'Django 5.0', 'DRF', 'SimpleJWT', 'PostgreSQL', 'PWA Workbox', 'Netlify', 'Render'],
+      live: 'https://royalenterprise.netlify.app/',
+      repo: 'https://github.com/Mouiezuddin',
+      status: 'LIVE'
+    }
   ]
 
   return (
@@ -136,13 +140,13 @@ export default function App() {
         <div className="container prologue-inner">
           <div className="prologue-eyebrow">— A Developer's Story —</div>
           <h1 className="prologue-name">Mouiezuddin<br />Killedar</h1>
-          <p className="prologue-role">Full Stack Python Developer · Software Engineer</p>
+          <p className="prologue-role">Full Stack Python Developer · Django · Flask · React JS · REST API · AI Integration</p>
           <div className="freelance-availability-badge">
             <span className="availability-dot" />
-            <span>Available for Freelance</span>
+            <span>Available for Software Engineer & Full Stack Roles</span>
           </div>
           <p className="prologue-tagline">
-            Every great product begins with a problem worth solving. This is the story of how I learned to build things that matter — one line of code, one shipped feature, one solved constraint at a time.
+            Motivated BCA graduate (GPA: 8.5/10.0) with hands-on experience building and deploying 8+ production-grade web applications. Skilled in Python, Django, Flask, React JS, PostgreSQL, JWT/RBAC auth, AI integration, and CI/CD pipelines.
           </p>
           <div className="prologue-cta">
             <a href="#origin" className="btn">Read the Story ↓</a>
@@ -171,10 +175,10 @@ export default function App() {
               <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
                 <div style={{ flex: 1, minWidth: '260px' }}>
                   <p className="story-narrative">
-                    It started, as most stories do, with curiosity. I'm <strong>Mouiezuddin Killedar</strong>, a Full Stack Python Developer from Bijapur, Karnataka — currently completing my Bachelor of Computer Applications at Kumudben Darbar College with a <strong>GPA of 8.5</strong>.
+                    It started, as most stories do, with curiosity. I'm <strong>Mouiezuddin Killedar</strong>, a Full Stack Python Developer from Bijapur, Karnataka — BCA graduate from Kumudben Darbar College (Rani Channamma University) with a <strong>GPA of 8.5/10.0</strong>.
                   </p>
                   <p className="story-narrative" style={{ marginTop: '1rem' }}>
-                    What began as tinkering with Python scripts turned into designing production systems. I found that I don't just want to write code — I want to solve real problems, with the architecture to back it up.
+                    From architecting DRF REST APIs and React SPAs to engineering AI chatbot analysts and installable native PWAs, I build robust, production-grade applications that solve real engineering and business constraints.
                   </p>
                 </div>
                 <div style={{ width: '200px', flexShrink: 0, margin: '0 auto' }}>
@@ -207,7 +211,7 @@ export default function App() {
                 My core arena. I design scalable APIs, model clean databases, implement JWT-based auth with granular RBAC, and squeeze every millisecond out of ORM queries. Django and Flask are my primary weapons.
               </p>
               <div className="tag-cloud">
-                {['Python', 'Django', 'Flask', 'DRF', 'PostgreSQL', 'SQLite', 'JWT', 'RBAC'].map(t => <code key={t} className="tag">{t}</code>)}
+                {['Python', 'Django 5.0', 'Flask', 'DRF', 'PostgreSQL', 'MySQL', 'SQLite', 'JWT', 'RBAC', 'OAuth2'].map(t => <code key={t} className="tag">{t}</code>)}
               </div>
             </div>
           </StoryBlock>
@@ -215,12 +219,12 @@ export default function App() {
           <StoryBlock side="right" delay={100}>
             <div className="story-card craft-card">
               <div className="craft-icon">✦</div>
-              <h3 className="craft-title">Interactive Frontends</h3>
+              <h3 className="craft-title">Interactive Frontends & PWA</h3>
               <p className="story-narrative">
-                A backend is nothing without the interface that brings it to life. I build state-driven React SPAs with responsive grids, DOM-savvy JavaScript, and component systems that scale without spaghetti.
+                I build state-driven React 19 SPAs with Vite 6, Tailwind CSS, responsive grids, and installable PWA Workbox capabilities — delivering native mobile-like user experiences with offline resilience.
               </p>
               <div className="tag-cloud">
-                {['React JS', 'JavaScript ES6+', 'HTML5', 'CSS3', 'Bootstrap 5', 'Responsive UI'].map(t => <code key={t} className="tag">{t}</code>)}
+                {['React 19', 'JavaScript ES6+', 'Tailwind CSS', 'Bootstrap 5', 'HTML5', 'CSS3', 'PWA Workbox', 'Responsive UI'].map(t => <code key={t} className="tag">{t}</code>)}
               </div>
             </div>
           </StoryBlock>
@@ -228,12 +232,12 @@ export default function App() {
           <StoryBlock side="left" delay={200}>
             <div className="story-card craft-card">
               <div className="craft-icon">◈</div>
-              <h3 className="craft-title">DevOps & Security</h3>
+              <h3 className="craft-title">DevOps, Security & AI</h3>
               <p className="story-narrative">
-                Shipping isn't the finish line — reliability is. I containerise with Docker, automate with GitHub Actions, protect with CSRF/password hashing, and validate everything through Pytest TDD suites.
+                Shipping isn't the finish line — reliability & intelligence are. I integrate AI APIs (scikit-learn, LLMs), containerise with Docker, automate CI/CD with GitHub Actions, protect with JWT/CSRF, and validate via Pytest TDD.
               </p>
               <div className="tag-cloud">
-                {['Docker', 'Git & GitHub', 'GitHub Actions', 'Render', 'Postman', 'Pytest TDD'].map(t => <code key={t} className="tag">{t}</code>)}
+                {['Docker', 'Git & GitHub', 'GitHub Actions', 'Render', 'Netlify', 'Postman', 'Pytest TDD', 'scikit-learn', 'Generative AI'].map(t => <code key={t} className="tag">{t}</code>)}
               </div>
             </div>
           </StoryBlock>
@@ -250,76 +254,112 @@ export default function App() {
 
         {/* ── CHAPTER 3: THE WORKS ────────────────────────────────────── */}
         <section id="works" className="story-chapter">
-          <ChapterMarker num="03" title="The Works" sub="Six real systems. Each one a problem solved." />
+          <ChapterMarker num="03" title="The Works" sub="Enterprise portals, production backends, and AI integrations." />
 
-          {projects.map((proj, i) => (
-            <StoryBlock key={proj.id} side={i % 2 === 0 ? 'right' : 'left'} delay={i * 60}>
-              <div className="story-card project-card">
-                <div className="project-card-top">
-                  <div>
-                    <span className="project-num">Project {proj.id}</span>
-                    <span className={`project-status status-${proj.status.toLowerCase()}`}>{proj.status}</span>
+          {projects.length > 0 ? (
+            projects.map((proj, i) => (
+              <StoryBlock key={proj.id} side={i % 2 === 0 ? 'right' : 'left'} delay={i * 60}>
+                <div className="story-card project-card">
+                  <div className="project-card-top">
+                    <div>
+                      <span className="project-num">Project {proj.id}</span>
+                      <span className={`project-status status-${proj.status.toLowerCase()}`}>{proj.status}</span>
+                    </div>
+                    <span className="project-date">{proj.date}</span>
                   </div>
-                  <span className="project-date">{proj.date}</span>
+                  <h3 className="project-title">{proj.title}</h3>
+                  <p className="story-narrative">{proj.story}</p>
+                  <div className="tag-cloud" style={{ marginTop: '1rem' }}>
+                    {proj.tags.map(t => <code key={t} className="tag">{t}</code>)}
+                  </div>
+                  <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.25rem', flexWrap: 'wrap' }}>
+                    {proj.live && <a href={proj.live} target="_blank" rel="noopener noreferrer" className="btn" style={{ padding: '0.5rem 1.1rem', fontSize: '0.68rem' }}>↗ Live Demo</a>}
+                    <a href={proj.repo} target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '0.5rem 1.1rem', fontSize: '0.68rem' }}>⌥ GitHub Repo</a>
+                  </div>
                 </div>
-                <h3 className="project-title">{proj.title}</h3>
-                <p className="story-narrative">{proj.story}</p>
-                <div className="tag-cloud" style={{ marginTop: '1rem' }}>
-                  {proj.tags.map(t => <code key={t} className="tag">{t}</code>)}
-                </div>
-                <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.25rem', flexWrap: 'wrap' }}>
-                  {proj.live && <a href={proj.live} target="_blank" rel="noopener noreferrer" className="btn" style={{ padding: '0.5rem 1.1rem', fontSize: '0.68rem' }}>↗ Live Demo</a>}
-                  <a href={proj.repo} target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '0.5rem 1.1rem', fontSize: '0.68rem' }}>⌥ GitHub Repo</a>
-                </div>
+              </StoryBlock>
+            ))
+          ) : (
+            <StoryBlock side="right">
+              <div className="story-card" style={{ textAlign: 'center', padding: '3rem 2rem' }}>
+                <p className="story-narrative" style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>
+                  No projects currently listed.
+                </p>
               </div>
             </StoryBlock>
-          ))}
+          )}
         </section>
 
         {/* ── CHAPTER 4: THE JOURNEY ──────────────────────────────────── */}
         <section id="journey" className="story-chapter">
           <ChapterMarker num="04" title="The Journey" sub="How experience, education and credentials shaped the engineer." />
 
+          {/* Freelance Experience */}
           <StoryBlock side="right">
             <div className="story-card journey-card">
-              <div className="journey-badge">Work Experience</div>
+              <div className="journey-badge" style={{ backgroundColor: 'rgba(56, 189, 248, 0.15)', color: 'var(--secondary)', borderColor: 'rgba(56, 189, 248, 0.3)' }}>Freelance Experience</div>
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                <h3 style={{ fontSize: '1.2rem', color: 'var(--text-main)' }}>Full Stack Developer Intern</h3>
-                <span className="mono-label" style={{ color: 'var(--secondary)' }}>Feb 2024 – Apr 2024</span>
+                <h3 style={{ fontSize: '1.2rem', color: 'var(--text-main)' }}>Freelance Full Stack Developer</h3>
+                <span className="mono-label" style={{ color: 'var(--secondary)' }}>June 2026 – Present</span>
               </div>
-              <p className="story-narrative" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', marginBottom: '1.25rem', color: 'var(--primary)' }}>Innoovatum · Remote</p>
-              <p className="story-narrative">
-                Three months that changed how I see software. Working in real sprints with code reviews, feature branches, and Pytest suites, I shipped 8 production apps, cut API latency by 75%, and learned that good architecture is a discipline — not an afterthought.
-              </p>
+              <p className="story-narrative" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', marginBottom: '1.25rem', color: 'var(--primary)' }}>Royal Enterprises · Client Project</p>
               <ul className="journey-list">
-                <li>Built DRF APIs with JWT auth and role-based authorization for 2000+ monthly users.</li>
-                <li>Optimised ORM queries and DB indices, dropping latency from 800ms → 200ms.</li>
-                <li>Configured full-text search indexes, reducing query execution to 0.3s.</li>
-                <li>Operated in agile sprints: feature branches, peer reviews, TDD with Pytest.</li>
+                <li>Delivered enterprise-grade inventory & sales portal for battery, inverter, solar & lighting retail client; live at <strong>royalenterprise.netlify.app</strong>.</li>
+                <li>Built real-time stock tracking with threshold alerts, audit-logged stock in/out, and 1-click WhatsApp digital receipts for customer purchases & warranties.</li>
+                <li>Engineered <strong>BatteryHub AI Sales Analyst</strong> chatbot (English & Hinglish) for sales, best-seller, dead-stock, and reorder insights.</li>
+                <li>Implemented Instagram-style installable PWA with offline support, JWT token rotation, RBAC (Admin/Staff), and 30-minute brute-force lockout security.</li>
               </ul>
             </div>
           </StoryBlock>
 
+          {/* Internship Experience */}
           <StoryBlock side="left" delay={100}>
             <div className="story-card journey-card">
-              <div className="journey-badge">Education</div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                <h3 style={{ fontSize: '1.2rem', color: 'var(--text-main)' }}>Bachelor of Computer Applications</h3>
-                <span className="mono-label" style={{ color: 'var(--primary)' }}>Completed Jun 2026</span>
+              <div className="journey-badge">Internship Experience</div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                <h3 style={{ fontSize: '1.2rem', color: 'var(--text-main)' }}>Full Stack Developer Intern</h3>
+                <span className="mono-label" style={{ color: 'var(--secondary)' }}>January 2026 – May 2026</span>
               </div>
-              <p className="story-narrative" style={{ marginBottom: '0.5rem' }}>Kumudben Darbar College, Rani Channamma University, Belagavi</p>
-              <p className="story-narrative" style={{ fontFamily: 'var(--font-mono)', color: 'var(--secondary)', fontWeight: 700 }}>GPA: 8.5 / 10.0</p>
+              <p className="story-narrative" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', marginBottom: '1.25rem', color: 'var(--primary)' }}>Innoovatum · Remote</p>
+              <ul className="journey-list">
+                <li>Built and deployed 8 production-grade web applications using Django and Flask; served 2,000+ combined monthly active users with 99.5% uptime across 3+ live deployments.</li>
+                <li>Developed secure REST APIs with Django REST Framework using JWT authentication, OAuth2, and RBAC across 5 user roles (Admin, Librarian, Member, Customer, Staff).</li>
+                <li>Optimized PostgreSQL queries via Django ORM indexing and raw SQL refactoring — reduced API latency from 800ms to 200ms (75%) and search time from 2.5s to 0.3s (88%).</li>
+                <li>Practiced TDD with Pytest, validated APIs via Postman, and maintained CI/CD pipelines using GitHub Actions with feature-branch Git workflow and peer code reviews.</li>
+              </ul>
             </div>
           </StoryBlock>
 
+          {/* Education */}
           <StoryBlock side="right" delay={150}>
+            <div className="story-card journey-card">
+              <div className="journey-badge">Education</div>
+              <div style={{ marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.25rem' }}>
+                  <h3 style={{ fontSize: '1.1rem', color: 'var(--text-main)' }}>Bachelor of Computer Applications (BCA)</h3>
+                  <span className="mono-label" style={{ color: 'var(--primary)' }}>Completed June 2026</span>
+                </div>
+                <p className="story-narrative" style={{ marginBottom: '0.25rem' }}>Kumudben Darbar College, Rani Channamma University, Belagavi</p>
+                <p className="story-narrative" style={{ fontFamily: 'var(--font-mono)', color: 'var(--secondary)', fontWeight: 700 }}>GPA: 8.5 / 10.0</p>
+              </div>
+              <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '0.75rem', marginTop: '0.75rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <h4 style={{ fontSize: '0.95rem', color: 'var(--text-main)' }}>Pre-University Certificate (PUC), Science</h4>
+                  <span className="story-narrative" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem' }}>Darbar Pre-University College</span>
+                </div>
+              </div>
+            </div>
+          </StoryBlock>
+
+          {/* Certifications */}
+          <StoryBlock side="left" delay={200}>
             <div className="story-card journey-card">
               <div className="journey-badge">Certifications</div>
               <ul className="cert-list">
                 {[
-                  ['Generative AI for Everyone', 'Coursera', '2025'],
-                  ['Microsoft Copilot for Security', 'Microsoft', '2025'],
-                  ['Data Analyst 101', 'Code: 8615099', '2024'],
+                  ['Generative AI for Everyone', 'Coursera · AI fundamentals, prompt engineering & AI integration', '2025'],
+                  ['Microsoft Copilot for Security', 'Microsoft · AI-powered security & threat detection', '2025'],
+                  ['Data Analyst 101', 'Verification Code: 8615099 · SQL, Python, data analytics & visualization', '2024'],
                 ].map(([name, issuer, year]) => (
                   <li key={name} className="cert-item">
                     <span className="cert-check">✓</span>
@@ -479,7 +519,7 @@ export default function App() {
           <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
             {[
               ['https://github.com/Mouiezuddin', 'GitHub', 'M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'],
-              ['https://linkedin.com/in/mouiezuddin-killedar', 'LinkedIn', 'M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z'],
+              ['https://linkedin.com/in/mouiezuddin-killedar-660mk', 'LinkedIn', 'M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z'],
               ['mailto:killedarmouiezuddin@gmail.com', 'Gmail', 'M24 5.457v13.909c0 .904-.733 1.634-1.636 1.634h-3.818V11l-6.545 4.545L5.455 11v10H1.636C.733 21 0 20.27 0 19.366V5.457c0-1.298 1.458-2.057 2.518-1.318L12 10.73l9.482-6.591C22.542 3.4 24 4.159 24 5.457z'],
             ].map(([href, title, d]) => (
               <a key={title} href={href} target={href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer" className="footer-link" title={title} style={{ display: 'flex' }}>
