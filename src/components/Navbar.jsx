@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
+import ThemeToggle from './ThemeToggle';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
-export default function Navbar() {
+export default function Navbar({ theme = 'dark', onToggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -39,6 +40,9 @@ export default function Navbar() {
 
         {/* Header Actions */}
         <div className="header-actions">
+          {/* Light / Dark Theme Toggle */}
+          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+
           <a 
             href={PERSONAL_INFO.resumePath} 
             download="Mouiezuddin_Killedar_Resume.pdf" 
@@ -80,6 +84,12 @@ export default function Navbar() {
             <li><a href="#about" className="mobile-nav-link" onClick={closeMenu}>About</a></li>
             <li><a href="#contact" className="mobile-nav-link" onClick={closeMenu}>Contact</a></li>
           </ul>
+
+          <div className="mobile-drawer-theme-row">
+            <span className="mobile-theme-label">Theme Mode:</span>
+            <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+          </div>
+
           <div className="mobile-drawer-cta">
             <a 
               href={PERSONAL_INFO.resumePath} 

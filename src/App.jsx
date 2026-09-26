@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import ProjectCard from './components/ProjectCard';
 import CaseStudyModal from './components/CaseStudyModal';
@@ -13,6 +14,44 @@ import { PERSONAL_INFO, FEATURED_PROJECTS, MORE_PROJECTS } from './data/portfoli
 export default function App() {
   const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
   const [showAllMoreProjects, setShowAllMoreProjects] = useState(false);
+  
+  // Theme state: dark (default) or light
+  const [theme, setTheme] = useState(() => {
+    try {
+      const saved = localStorage.getItem('mk_portfolio_theme');
+      if (saved === 'light' || saved === 'dark') return saved;
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    } catch {
+      return 'dark';
+    }
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem('mk_portfolio_theme', theme);
+    } catch {
+      // ignore
+    }
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) {
+      metaTheme.setAttribute('content', theme === 'dark' ? '#090a0f' : '#f8fafc');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
+  const [isLoading, setIsLoading] = useState(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('intro') === 'true') return true;
+      return !sessionStorage.getItem('mk_preloader_seen');
+    } catch {
+      return true;
+    }
+  });
 
   const displayedMoreProjects = showAllMoreProjects 
     ? MORE_PROJECTS 
@@ -20,8 +59,13 @@ export default function App() {
 
   return (
     <div className="portfolio-app">
+      {/* ── 0. BUILD PIPELINE PRELOADER ────────────────────────── */}
+      {isLoading && (
+        <Preloader onComplete={() => setIsLoading(false)} />
+      )}
+
       {/* ── 1. NAVBAR ─────────────────────────────────────────── */}
-      <Navbar />
+      <Navbar theme={theme} onToggleTheme={toggleTheme} />
 
       {/* ── 2. HERO SECTION ───────────────────────────────────── */}
       <header id="hero" className="hero-section">
@@ -197,6 +241,22 @@ export default function App() {
             </p>
           </div>
           <div className="footer-nav">
+            <button 
+              type="button" 
+              onClick={() => {
+                try {
+                  sessionStorage.removeItem('mk_preloader_seen');
+                } catch {
+                  // Ignore
+                }
+                setIsLoading(true);
+              }} 
+              className="footer-link"
+              style={{ background: 'transparent', border: 'none', cursor: 'pointer', font: 'inherit', padding: 0 }}
+              title="Replay intro animation"
+            >
+              Intro ↺
+            </button>
             <a href="#hero" className="footer-link">Top ↑</a>
             <a href="#work" className="footer-link">Work</a>
             <a href="#engineering" className="footer-link">Engineering</a>
