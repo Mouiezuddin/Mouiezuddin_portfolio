@@ -21,7 +21,9 @@
   <a href="https://github.com/Mouiezuddin/Mouiezuddin_portfolio">
     <img src="https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite" alt="Vite" />
   </a>
-  <img src="https://img.shields.io/badge/status-live-brightgreen?style=for-the-badge" alt="Status" />
+  <a href="https://mouiezuddin-portfolio.vercel.app">
+    <img src="https://img.shields.io/badge/status-live-brightgreen?style=for-the-badge" alt="Status" />
+  </a>
 </p>
 
 <p align="center">
@@ -168,12 +170,13 @@ The theme switcher supports multiple hand-curated palettes. All colours are driv
 
 | # | Project | Stack | Status |
 |---|---|---|---|
-| 01 | [Library Management System](https://librarymanagementsystem-0cty.onrender.com) | Django 4.2, SQLite, Bootstrap 5 | 🟢 Live |
-| 02 | Restaurant & Ordering Platform | Django, PostgreSQL, React, REST API | 🔵 Backend |
-| 03 | [Developer's Tale Blog](https://developers-tale.onrender.com) | Django, PostgreSQL, Bootstrap 5 | 🟢 Live |
-| 04 | [Calorie Tracker](https://github.com/Mouiezuddin/Calories_Counter) | Django ORM, SQLite, JavaScript | 🛠️ Dev |
-| 05 | [SpendWise Expenses](https://github.com/Mouiezuddin/Expense_tracker) | Flask, Blueprints, SQLite | 🛠️ Dev |
-| 06 | [MedRemind System](https://github.com/Mouiezuddin/Medicine_remainder) | Flask, REST API, JavaScript | 🛠️ Dev |
+| 01 | [HisabPoint — Digital Bahi Khata](https://hisab-point.vercel.app) | React 19, TypeScript, Django REST, PostgreSQL, Vite, Tailwind | 🟢 Live |
+| 02 | [Library Management System](https://librarymanagementsystem-0cty.onrender.com) | Django 4.2, SQLite, Bootstrap 5 | 🟢 Live |
+| 03 | Restaurant & Ordering Platform | Django, PostgreSQL, React, REST API | 🔵 Backend |
+| 04 | [Developer's Tale Blog](https://developers-tale.onrender.com) | Django, PostgreSQL, Bootstrap 5 | 🟢 Live |
+| 05 | [Calorie Tracker](https://github.com/Mouiezuddin/Calories_Counter) | Django ORM, SQLite, JavaScript | 🛠️ Dev |
+| 06 | [SpendWise Expenses](https://github.com/Mouiezuddin/Expense_tracker) | Flask, Blueprints, SQLite | 🛠️ Dev |
+| 07 | [MedRemind System](https://github.com/Mouiezuddin/Medicine_remainder) | Flask, REST API, JavaScript | 🛠️ Dev |
 
 ---
 

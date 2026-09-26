@@ -11,48 +11,52 @@ export default function DashboardSandbox() {
     '/api/v1/profile': {
       data: {
         name: "Mouiezuddin Killedar",
-        title: "Full Stack Python Developer | Django | Flask | React JS | REST API | AI Integration",
+        title: "Software Engineer & Full Stack Python Developer",
         location: "Bijapur, Karnataka, India",
-        contact: "+91 8867555660 | killedarmouiezuddin@gmail.com",
-        education: "BCA (GPA: 8.5 / 10.0) — Kumudben Darbar College",
-        systems_status: "ACTIVE_FOR_SOFTWARE_ENGINEER_ROLES",
+        gpa: "8.5 / 10.0",
+        systems_status: "ACTIVE_FOR_OPPORTUNITIES",
         active_channels: ["WhatsApp", "Gmail", "GitHub", "LinkedIn"]
       },
       latencyRange: [15, 30],
-      kbSize: 0.52
+      kbSize: 0.45
     },
     '/api/v1/competencies': {
       data: {
-        backend_architecture: ["Python", "Django 5.0", "Flask", "Django REST Framework (DRF)", "PostgreSQL", "MySQL", "SQLite", "JWT Auth", "RBAC", "OAuth2"],
-        frontend_ui: ["React 19", "Vite 6", "Tailwind CSS", "Bootstrap 5", "JavaScript (ES6+)", "HTML5 / CSS3", "PWA Workbox"],
-        ai_ml_integration: ["scikit-learn", "Generative AI", "AI API Integration", "Data Analytics"],
-        devops_infrastructure: ["Docker", "Git & GitHub", "GitHub Actions CI/CD", "Render", "Netlify", "Postman", "Pytest (TDD)"]
+        backend_architecture: ["Python", "Django", "Flask", "Django REST Framework (DRF)", "PostgreSQL", "SQLite", "JWT Auth", "RBAC"],
+        frontend_ui: ["React JS", "JavaScript ES6+", "HTML5", "CSS3", "Bootstrap 5", "Responsive Web Design"],
+        devops_infrastructure: ["Docker", "Git & GitHub", "GitHub Actions", "Render Cloud", "Postman Client", "Pytest (TDD)"]
       },
       latencyRange: [25, 45],
-      kbSize: 0.95
+      kbSize: 0.85
     },
     '/api/v1/projects': {
       data: {
-        total_projects: 1,
+        total_projects: 7,
         deployed_systems: [
-          { name: "Royal Enterprises — Battery & Lighting Stock Management System", tech: "React 19, Vite 6, Tailwind CSS, Django 5.0, DRF, SimpleJWT, PostgreSQL", status: "LIVE", live_url: "https://royalenterprise.netlify.app/" }
+          { name: "HisabPoint — Digital Bahi Khata", tech: "React 19, TypeScript, Django REST, PostgreSQL, Vite, Tailwind", status: "LIVE", latency: "<200ms", live_demo: "https://hisab-point.vercel.app" },
+          { name: "Library Management System", tech: "Django, SQLite, Bootstrap 5", status: "LIVE", latency: "0.3s" },
+          { name: "Restaurant Ordering & Backend System", tech: "Django, PostgreSQL, React, REST API", status: "BACKEND", concurrency: "500+" },
+          { name: "Developer's Tale Blog", tech: "Django, PostgreSQL, Bootstrap 5", status: "LIVE", uptime: "99%+" },
+          { name: "Calorie Tracker", tech: "Django ORM, SQLite, JavaScript", status: "DEV" },
+          { name: "SpendWise Expenses", tech: "Flask, Blueprints, SQLite", status: "DEV" },
+          { name: "MedRemind System", tech: "Flask, REST API, JavaScript", status: "DEV", concurrent_users: "100+" }
         ]
       },
-      latencyRange: [15, 30],
-      kbSize: 0.65
+      latencyRange: [35, 60],
+      kbSize: 1.42
     },
     '/api/v1/metrics': {
       data: {
         performance_stats: {
           deployed_production_applications: 8,
-          average_api_response_latency_reduction: "75% (800ms -> 200ms)",
-          database_search_latency_reduction: "88% (2.5s -> 0.3s)",
+          average_api_response_latency_reduction: "75%",
           monthly_active_users_served: "2000+",
-          operational_uptime_achieved: "99.5%"
+          core_database_index_latency: "0.3s",
+          operational_uptime_achieved: "99%+"
         }
       },
       latencyRange: [10, 20],
-      kbSize: 0.38
+      kbSize: 0.32
     }
   }
 

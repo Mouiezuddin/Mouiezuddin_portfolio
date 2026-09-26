@@ -102,7 +102,7 @@ async function createResume() {
   drawText(contactLine1, { fontSize: 8.5, color: colorDarkGrey, align: 'center' });
   y -= 11;
   
-  const contactLine2 = "GitHub: github.com/Mouiezuddin  |  Portfolio: mouiezuddinportfolio.netlify.app  |  LinkedIn: linkedin.com/in/mouiezuddin-killedar-660mk";
+  const contactLine2 = "GitHub: github.com/Mouiezuddin  |  Portfolio: mouiezuddin-portfolio.vercel.app";
   drawText(contactLine2, { fontSize: 8.5, color: colorDarkGrey, align: 'center' });
   y -= 8;
   
@@ -130,8 +130,26 @@ async function createResume() {
   // --- TECHNICAL SKILLS ---
   drawSectionHeader("Technical Skills");
   
-  drawText("Programming & DBs:", { fontSize: 8.5, font: fontBold, color: colorBlack });
-  drawText("Python, JavaScript (ES6+), HTML5, CSS3, SQL, PostgreSQL, MySQL, SQLite, Django ORM", { x: marginX + 115, fontSize: 8.5, color: colorDarkGrey });
+  drawText("Backend Systems:", { fontSize: 9.5, font: fontBold, color: colorBlack });
+  drawText("Python, Django, Flask, Django REST Framework (DRF), PostgreSQL, SQLite, JWT Auth, RBAC", { x: marginX + 110, fontSize: 9.5, color: colorDarkGrey });
+  y -= 14;
+  
+  drawText("Frontend & Web:", { fontSize: 9.5, font: fontBold, color: colorBlack });
+  drawText("React 19, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Bootstrap 5", { x: marginX + 110, fontSize: 9.5, color: colorDarkGrey });
+  y -= 14;
+  
+  drawText("DevOps & Testing:", { fontSize: 9.5, font: fontBold, color: colorBlack });
+  drawText("Docker, Git & GitHub, GitHub Actions, Render Cloud, Postman Client, Pytest (TDD), Vitest", { x: marginX + 110, fontSize: 9.5, color: colorDarkGrey });
+  y -= 14;
+  
+  // --- WORK EXPERIENCE ---
+  drawSectionHeader("Professional Experience");
+  
+  // Company & Position
+  drawText("Full Stack Developer Intern", { fontSize: 10, font: fontBold });
+  drawText("02/2024 – 04/2024", { fontSize: 9, font: fontBold, align: 'right' });
+  y -= 12;
+  drawText("Innoovatum (Remote)", { fontSize: 9.5, font: fontOblique, color: colorDarkGrey });
   y -= 12;
   
   drawText("Backend & Security:", { fontSize: 8.5, font: fontBold, color: colorBlack });
@@ -176,24 +194,26 @@ async function createResume() {
   // --- PROJECTS ---
   drawSectionHeader("Featured Production Projects");
   
-  drawText("Royal Enterprises — Battery & Lighting Stock Management System", { fontSize: 9.5, font: fontBold });
-  drawText("React 19, Vite 6, Tailwind CSS, Django 5.0, DRF, PostgreSQL, Netlify, Render", { fontSize: 8, font: fontOblique, color: colorDarkGrey, align: 'right' });
-  y -= 11;
-  drawBullet("Full-stack inventory & sales portal featuring real-time stock tracking (Okaya, Exide, Amaron), 1-click WhatsApp receipts, BatteryHub AI Sales Analyst chatbot in English & Hinglish, installable PWA with offline support, and JWT/RBAC security. Live: https://royalenterprise.netlify.app/");
-  y -= 4;
-  
-  // --- EDUCATION ---
-  drawSectionHeader("Education");
-  
-  drawText("Bachelor of Computer Applications (BCA) | GPA: 8.5 / 10.0", { fontSize: 9.5, font: fontBold });
-  drawText("Completed: June 2026", { fontSize: 8.5, font: fontBold, align: 'right' });
-  y -= 11;
-  drawText("Kumudben Darbar College, Rani Channamma University, Belagavi", { fontSize: 8.5, color: colorDarkGrey });
-  y -= 13;
+  // Project 1 - HisabPoint
+  drawText("HisabPoint — Digital Bahi Khata & Cloud Ledger", { fontSize: 10, font: fontBold });
+  drawText("React 19, TypeScript, Django REST, PostgreSQL, Vite", { fontSize: 8.5, font: fontOblique, color: colorDarkGrey, align: 'right' });
+  y -= 12;
+  drawBullet("Architected ACID-compliant cloud ledger for retail merchants using DRF & PostgreSQL atomic transactions. Optimized checkout query latency to <200ms via composite indexing. Dual-enforced 2FA fraud lockout security.");
+  y -= 2;
 
-  drawText("Pre-University Certificate (PUC), Science", { fontSize: 9, font: fontBold });
-  drawText("Darbar Pre-University College", { fontSize: 8.5, color: colorDarkGrey, align: 'right' });
-  y -= 8;
+  // Project 2 - Library Management System
+  drawText("Library Management System", { fontSize: 10, font: fontBold });
+  drawText("Django, SQLite, Bootstrap 5, Render", { fontSize: 8.5, font: fontOblique, color: colorDarkGrey, align: 'right' });
+  y -= 12;
+  drawBullet("Replaced manual spreadsheet workflows, supporting 50+ concurrent users with multi-role RBAC. Built full CRUD operations and full-text search, reducing search latency to 0.3s. Deployed live on Render.");
+  y -= 2;
+  
+  // Project 3 - Restaurant Ordering System
+  drawText("Restaurant Ordering & Backend System", { fontSize: 10, font: fontBold });
+  drawText("Django, PostgreSQL, React JS, REST API", { fontSize: 8.5, font: fontOblique, color: colorDarkGrey, align: 'right' });
+  y -= 12;
+  drawBullet("E-commerce application with menu catalogs, inventory tracking, secure order placement, and integration of payment routing. Supports 3 custom user roles and handles up to 500+ concurrent order pipelines.");
+
   
   // --- CERTIFICATIONS ---
   drawSectionHeader("Certifications");
