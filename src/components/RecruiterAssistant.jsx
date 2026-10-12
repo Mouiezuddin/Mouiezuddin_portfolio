@@ -298,8 +298,19 @@ export default function RecruiterAssistant({ onOpenCaseStudy }) {
             />
           </span>
 
-          <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--accent)', fontWeight: 600 }}>MK</span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <img 
+              src="/assets/mk_bot_mascot.jpg" 
+              alt="MK AI Copilot" 
+              style={{
+                width: '24px',
+                height: '24px',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                border: '1.5px solid var(--accent)',
+                boxShadow: '0 0 8px rgba(245, 158, 11, 0.4)'
+              }}
+            />
             <span>Recruiter Assistant</span>
           </span>
 
@@ -358,24 +369,18 @@ export default function RecruiterAssistant({ onOpenCaseStudy }) {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <div
+              <img
+                src="/assets/mk_bot_mascot.jpg"
+                alt="Mouiezuddin AI"
                 style={{
-                  width: '34px',
-                  height: '34px',
-                  borderRadius: '8px',
-                  background: 'var(--accent-subtle)',
-                  border: '1px solid var(--accent-border)',
-                  color: 'var(--accent)',
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '13px',
-                  fontWeight: 700,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
+                  width: '38px',
+                  height: '38px',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  border: '2px solid var(--accent)',
+                  boxShadow: '0 0 12px rgba(245, 158, 11, 0.35)'
                 }}
-              >
-                MK
-              </div>
+              />
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <span style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--text-primary)' }}>
@@ -509,6 +514,22 @@ export default function RecruiterAssistant({ onOpenCaseStudy }) {
                       boxShadow: isUser ? '0 2px 10px rgba(245, 158, 11, 0.25)' : 'none'
                     }}
                   >
+                    {!isUser && msg.id === 'welcome' && (
+                      <div style={{ textAlign: 'center', marginBottom: '12px', marginTop: '4px' }}>
+                        <img 
+                          src="/assets/mk_bot_mascot.jpg" 
+                          alt="Mouiezuddin AI Copilot Mascot" 
+                          style={{
+                            width: '84px',
+                            height: '84px',
+                            borderRadius: '50%',
+                            objectFit: 'cover',
+                            border: '2px solid var(--accent)',
+                            boxShadow: '0 4px 20px rgba(245, 158, 11, 0.35)'
+                          }}
+                        />
+                      </div>
+                    )}
                     {isUser ? msg.text : renderFormattedText(msg.text)}
                   </div>
 
