@@ -9,6 +9,7 @@ import ExperienceTimeline from './components/ExperienceTimeline';
 import AboutSection from './components/AboutSection';
 import GitHubProof from './components/GitHubProof';
 import ContactSection from './components/ContactSection';
+import RecruiterAssistant from './components/RecruiterAssistant';
 import { PERSONAL_INFO, FEATURED_PROJECTS, MORE_PROJECTS } from './data/portfolioData';
 
 export default function App() {
@@ -275,6 +276,9 @@ export default function App() {
           onClose={() => setSelectedCaseStudy(null)} 
         />
       )}
+
+      {/* ── RECRUITER & CLIENT COPILOT ───────────────────────── */}
+      <RecruiterAssistant onOpenCaseStudy={setSelectedCaseStudy} />
     </div>
   );
 }
