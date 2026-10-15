@@ -21,7 +21,7 @@
   <a href="https://github.com/Mouiezuddin/Mouiezuddin_portfolio">
     <img src="https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite" alt="Vite" />
   </a>
-  <a href="https://mouiezuddin-portfolio.vercel.app">
+  <a href="https://mouiezuddin.runs-on.dev">
     <img src="https://img.shields.io/badge/status-live-brightgreen?style=for-the-badge" alt="Status" />
   </a>
 </p>

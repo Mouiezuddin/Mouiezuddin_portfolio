@@ -51,7 +51,7 @@ CRITICAL FACTS & CONTEXT ABOUT MOUIEZUDDIN KILLEDAR:
   - Phone & WhatsApp: +91 8867555660
   - Email: killedarmouiezuddin@gmail.com
   - GitHub: https://github.com/Mouiezuddin
-  - Portfolio: https://mouiezuddin-portfolio.vercel.app
+  - Portfolio: https://mouiezuddin.runs-on.dev
   - LinkedIn: https://linkedin.com/in/mouiezuddin-killedar
   - Résumé: Available directly on the portfolio as a downloadable PDF.
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mouiezuddin-portfolio.vercel.app/sitemap.xml
+Sitemap: https://mouiezuddin.runs-on.dev/sitemap.xml

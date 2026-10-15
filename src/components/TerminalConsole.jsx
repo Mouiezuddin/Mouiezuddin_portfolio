@@ -87,7 +87,7 @@ export default function TerminalConsole() {
             PHONE: +91 8867555660<br />
             EMAIL: killedarmouiezuddin@gmail.com<br />
             GITHUB: <a href="https://github.com/Mouiezuddin" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}>github.com/Mouiezuddin</a><br />
-            PORTFOLIO: <a href="https://mouiezuddin-portfolio.vercel.app" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}>mouiezuddin-portfolio.vercel.app</a>
+            PORTFOLIO: <a href="https://mouiezuddin.runs-on.dev" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}>mouiezuddin.runs-on.dev</a>
           </div>
         )}
 

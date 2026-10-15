@@ -102,7 +102,7 @@ async function createResume() {
   drawText(contactLine1, { fontSize: 8.5, color: colorDarkGrey, align: 'center' });
   y -= 11;
   
-  const contactLine2 = "GitHub: github.com/Mouiezuddin  |  Portfolio: mouiezuddin-portfolio.vercel.app";
+  const contactLine2 = "GitHub: github.com/Mouiezuddin  |  Portfolio: mouiezuddin.runs-on.dev";
   drawText(contactLine2, { fontSize: 8.5, color: colorDarkGrey, align: 'center' });
   y -= 8;
   
