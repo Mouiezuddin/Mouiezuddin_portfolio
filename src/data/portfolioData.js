@@ -329,10 +329,12 @@ export const TECH_STACK = {
 export const EXPERIENCE_DATA = [
   {
     role: "Full Stack Developer Intern",
-    company: "Innoovatum",
-    location: "Remote",
-    period: "Feb 2024 – Apr 2024",
-    summary: "Worked in structured sprint cycles with code reviews and automated test suites, contributing to backend API optimization and full-stack web applications.",
+    company: "Innoovatum Engineering & Technology LLP",
+    location: "Remote / Vijayapura",
+    period: "Jan 2026 – May 2026",
+    credentialVerified: true,
+    certificateTitle: "AI-Integrated Python-Django Full-Stack Development",
+    summary: "Completed industrial internship developing AI-integrated web applications, optimizing backend API latency, and deploying full-stack systems with automated tests.",
     achievements: [
       "Built and deployed robust Django REST Framework APIs with secure JWT authentication and role-based permissions.",
       "Optimized ORM queries and database indices, reducing endpoint query response latency from 800ms to ~200ms on core routes.",
@@ -349,11 +351,143 @@ export const EDUCATION_DATA = {
   period: "Completed June 2026",
   gpa: "8.5 / 10.0",
   certifications: [
-    { title: "Generative AI for Everyone", issuer: "Coursera", year: "2025" },
-    { title: "Microsoft Copilot for Security", issuer: "Microsoft", year: "2025" },
-    { title: "Data Analyst 101 Certificate", issuer: "Verification Code: 8615099", year: "2024" }
+    { 
+      title: "Microsoft Copilot for Security", 
+      issuer: "Microsoft via Coursera", 
+      year: "Jul 2025", 
+      verifyUrl: "https://coursera.org/verify/YD42Y93U5L6V",
+      code: "YD42Y93U5L6V" 
+    },
+    { 
+      title: "AI-Integrated Python-Django Full-Stack", 
+      issuer: "Innoovatum Engineering & Technology", 
+      year: "May 2026", 
+      verifyUrl: null,
+      code: "Internship Completion" 
+    },
+    { 
+      title: "Developing Interpersonal Skills", 
+      issuer: "IBM via Coursera", 
+      year: "Oct 2025", 
+      verifyUrl: "https://coursera.org/verify/Z3KJALTAMU7H",
+      code: "Z3KJALTAMU7H" 
+    },
+    { 
+      title: "Data Analyst 101", 
+      issuer: "Simplilearn SkillUP", 
+      year: "Jul 2025", 
+      verifyUrl: null,
+      code: "8615099" 
+    }
   ]
 };
+
+export const CERTIFICATIONS = [
+  {
+    id: "innoovatum-internship",
+    title: "AI-Integrated Python-Django Full-Stack Development",
+    credentialType: "Industrial Internship",
+    issuer: "Innoovatum Engineering & Technology LLP",
+    issuerShort: "Innoovatum",
+    issuerOrg: "Engineering & Technology LLP, Vijayapura",
+    issueDate: "Jan 2026 – May 2026",
+    completedDate: "May 10, 2026",
+    signatories: "Shaukat Kotwal (CEO) & Abdul Raheem Sutar (CTO)",
+    sealText: "Innoovatum Engineering and Technology LLP VIJAYAPUR 586101",
+    verificationUrl: null,
+    credentialId: "INNO-2026-FSD",
+    hasCode: true,
+    category: "fullstack",
+    accentColor: "#3b82f6",
+    issuerLogoType: "innoovatum",
+    image: "/assets/certificates/innoovatum_python_django_internship.jpg",
+    description: "Successfully completed industrial internship in AI-Integrated Python-Django Full-Stack Development. Focused on engineering high-throughput REST APIs, database indexing, and full-stack software architecture.",
+    skills: ["Python", "Django", "Django REST Framework", "PostgreSQL", "Full-Stack Architecture", "TDD & Pytest", "ORM Optimization"],
+    highlights: [
+      "Hands-on AI-integrated backend microservices & REST APIs",
+      "Cut database query response latency from 800ms to ~200ms",
+      "Signed by CEO Shaukat Kotwal & CTO Abdul Raheem Sutar"
+    ]
+  },
+  {
+    id: "microsoft-copilot-security",
+    title: "Microsoft Copilot for Security",
+    credentialType: "Professional Course Certificate",
+    issuer: "Microsoft via Coursera",
+    issuerShort: "Microsoft",
+    issuerOrg: "Microsoft Authorized Curriculum",
+    issueDate: "July 9, 2025",
+    completedDate: "July 9, 2025",
+    signatories: "Marni Baker Stein (Chief Content Officer, Coursera)",
+    sealText: "Coursera Course Certificate · Education for Everyone",
+    verificationUrl: "https://coursera.org/verify/YD42Y93U5L6V",
+    credentialId: "YD42Y93U5L6V",
+    hasCode: true,
+    category: "ai",
+    accentColor: "#0284c7",
+    issuerLogoType: "microsoft",
+    image: "/assets/certificates/microsoft_copilot_security.jpg",
+    description: "Online non-credit course authorized by Microsoft and offered through Coursera. Explores generative AI security architecture, natural language threat querying, prompt-driven incident response, and SOC workflow automation.",
+    skills: ["Microsoft Copilot", "Generative AI Security", "Threat Intelligence", "Incident Response", "Cloud Security Posture"],
+    highlights: [
+      "Authorized and validated directly by Microsoft",
+      "Instant cryptographic verification on Coursera",
+      "Credential ID: YD42Y93U5L6V"
+    ]
+  },
+  {
+    id: "ibm-interpersonal-skills",
+    title: "Developing Interpersonal Skills",
+    credentialType: "Professional Course Certificate",
+    issuer: "IBM via Coursera",
+    issuerShort: "IBM",
+    issuerOrg: "IBM Skills Network",
+    issueDate: "October 1, 2025",
+    completedDate: "October 1, 2025",
+    signatories: "Rav Ahuja (Global Program Director, IBM Skills Network)",
+    sealText: "Coursera Course Certificate · Education for Everyone",
+    verificationUrl: "https://coursera.org/verify/Z3KJALTAMU7H",
+    credentialId: "Z3KJALTAMU7H",
+    hasCode: true,
+    category: "professional",
+    accentColor: "#0f62fe",
+    issuerLogoType: "ibm",
+    image: "/assets/certificates/ibm_interpersonal_skills.jpg",
+    description: "Authorized by IBM and offered through Coursera. Develops essential workplace competencies including cross-functional engineering collaboration, active listening, technical conflict resolution, and agile team communication.",
+    skills: ["Cross-Functional Collaboration", "Technical Communication", "Active Listening", "Agile Team Dynamics", "Conflict Resolution"],
+    highlights: [
+      "Authorized by IBM Skills Network",
+      "Direct Coursera verification: Z3KJALTAMU7H",
+      "Signed by Global Program Director Rav Ahuja"
+    ]
+  },
+  {
+    id: "simplilearn-data-analyst",
+    title: "Data Analyst 101",
+    credentialType: "Course Completion Certificate",
+    issuer: "Simplilearn SkillUP",
+    issuerShort: "Simplilearn",
+    issuerOrg: "Simplilearn Solutions",
+    issueDate: "July 12, 2025",
+    completedDate: "July 12, 2025",
+    signatories: "Krishna Kumar (CEO, Simplilearn)",
+    sealText: "Simplilearn SkillUP Certificate of Completion",
+    verificationUrl: null,
+    credentialId: "8615099",
+    hasCode: true,
+    category: "data",
+    accentColor: "#f59e0b",
+    issuerLogoType: "simplilearn",
+    image: "/assets/certificates/simplilearn_data_analyst_101.jpg",
+    description: "Online course demonstrating initiative and practical mastery of foundational data analytics concepts, structured SQL queries, data wrangling pipelines, and analytical metric reporting.",
+    skills: ["Data Analytics", "SQL Queries", "Data Wrangling", "Exploratory Data Analysis", "Business Intelligence"],
+    highlights: [
+      "Official certificate code: 8615099",
+      "Signed by Simplilearn CEO Krishna Kumar",
+      "Validates core SQL and analytical reasoning skills"
+    ]
+  }
+];
 
 export const GITHUB_REPOS = [
   {

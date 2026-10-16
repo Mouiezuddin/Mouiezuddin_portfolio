@@ -59,6 +59,36 @@ export const RECRUITER_KNOWLEDGE = [
     ]
   },
   {
+    id: 'certifications',
+    patterns: [
+      'certificate', 'certificates', 'certification', 'certifications', 'coursera', 'microsoft',
+      'ibm', 'simplilearn', 'credentials', 'certified', 'licence', 'licenses', 'accreditation'
+    ],
+    title: 'Verified Industry Certifications',
+    reply: `Mouiezuddin holds **4 verified industry credentials & technical certifications**:
+
+1. **AI-Integrated Python-Django Full-Stack Development** (Innoovatum Engineering & Technology LLP)
+   - Industrial internship validating full-stack microservices, ORM query optimization (800ms → 200ms), and automated testing.
+   - Signed by CEO Shaukat Kotwal & CTO Abdul Raheem Sutar.
+
+2. **Microsoft Copilot for Security** (Authorized by Microsoft via Coursera)
+   - Generative AI security architecture, threat analysis, incident response, and cloud SecOps automation.
+   - Verified Credential ID: \`YD42Y93U5L6V\`.
+
+3. **Developing Interpersonal Skills** (Authorized by IBM via Coursera)
+   - Cross-functional engineering communication, active listening, stakeholder management, and agile team dynamics.
+   - Verified Credential ID: \`Z3KJALTAMU7H\`.
+
+4. **Data Analyst 101** (Simplilearn SkillUP)
+   - Practical data analytics, SQL queries, exploratory data analysis, and metrics reporting.
+   - Certificate Code: \`8615099\`.`,
+    actions: [
+      { type: 'scroll', target: '#certifications', label: 'View Certifications & Badges' },
+      { type: 'external', url: 'https://coursera.org/verify/YD42Y93U5L6V', label: 'Verify Microsoft Credential ↗' },
+      { type: 'resume', label: 'Download Résumé' }
+    ]
+  },
+  {
     id: 'hisabpoint',
     patterns: [
       'hisabpoint', 'hisab point', 'ledger', 'acid', 'transaction', 'bahi khata',

@@ -6,6 +6,7 @@ import CaseStudyModal from './components/CaseStudyModal';
 import EngineeringSection from './components/EngineeringSection';
 import TechStack from './components/TechStack';
 import ExperienceTimeline from './components/ExperienceTimeline';
+import CertificationsSection from './components/CertificationsSection';
 import AboutSection from './components/AboutSection';
 import GitHubProof from './components/GitHubProof';
 import ContactSection from './components/ContactSection';
@@ -222,16 +223,19 @@ export default function App() {
       {/* ── 6. EXPERIENCE & EDUCATION ──────────────────────────── */}
       <ExperienceTimeline />
 
-      {/* ── 7. ABOUT SECTION ───────────────────────────────────── */}
+      {/* ── 7. VERIFIED CERTIFICATIONS (OPTION A GRID) ─────────── */}
+      <CertificationsSection />
+
+      {/* ── 8. ABOUT SECTION ───────────────────────────────────── */}
       <AboutSection />
 
-      {/* ── 8. GITHUB / DEVELOPMENT PROOF ──────────────────────── */}
+      {/* ── 9. GITHUB / DEVELOPMENT PROOF ──────────────────────── */}
       <GitHubProof />
 
-      {/* ── 9. CONTACT SECTION ─────────────────────────────────── */}
+      {/* ── 10. CONTACT SECTION ─────────────────────────────────── */}
       <ContactSection />
 
-      {/* ── 10. SITE FOOTER ────────────────────────────────────── */}
+      {/* ── 11. SITE FOOTER ────────────────────────────────────── */}
       <footer className="site-footer">
         <div className="container footer-container">
           <div className="footer-left">
@@ -262,6 +266,7 @@ export default function App() {
             <a href="#work" className="footer-link">Work</a>
             <a href="#engineering" className="footer-link">Engineering</a>
             <a href="#experience" className="footer-link">Experience</a>
+            <a href="#certifications" className="footer-link">Certifications</a>
             <a href={PERSONAL_INFO.resumePath} download="Mouiezuddin_Killedar_Resume.pdf" className="footer-link">Resume</a>
             <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" className="footer-link">GitHub</a>
             <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="footer-link">LinkedIn</a>

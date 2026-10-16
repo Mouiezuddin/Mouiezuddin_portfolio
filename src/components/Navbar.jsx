@@ -33,6 +33,7 @@ export default function Navbar({ theme = 'dark', onToggleTheme }) {
             <li><a href="#engineering" className="nav-link">Engineering</a></li>
             <li><a href="#stack" className="nav-link">Stack</a></li>
             <li><a href="#experience" className="nav-link">Experience</a></li>
+            <li><a href="#certifications" className="nav-link">Certifications</a></li>
             <li><a href="#about" className="nav-link">About</a></li>
             <li><a href="#contact" className="nav-link">Contact</a></li>
           </ul>
@@ -81,6 +82,7 @@ export default function Navbar({ theme = 'dark', onToggleTheme }) {
             <li><a href="#engineering" className="mobile-nav-link" onClick={closeMenu}>Engineering Depth</a></li>
             <li><a href="#stack" className="mobile-nav-link" onClick={closeMenu}>Tech Stack</a></li>
             <li><a href="#experience" className="mobile-nav-link" onClick={closeMenu}>Experience & Education</a></li>
+            <li><a href="#certifications" className="mobile-nav-link" onClick={closeMenu}>Certifications</a></li>
             <li><a href="#about" className="mobile-nav-link" onClick={closeMenu}>About</a></li>
             <li><a href="#contact" className="mobile-nav-link" onClick={closeMenu}>Contact</a></li>
           </ul>

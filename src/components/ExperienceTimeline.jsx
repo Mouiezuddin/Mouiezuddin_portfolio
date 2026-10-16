@@ -72,14 +72,22 @@ export default function ExperienceTimeline() {
 
             {/* Certifications Card */}
             <div className="certifications-card">
-              <div className="edu-badge">VERIFIED CREDENTIALS</div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', flexWrap: 'wrap', gap: '8px' }}>
+                <div className="edu-badge" style={{ margin: 0 }}>VERIFIED CREDENTIALS</div>
+                <a href="#certifications" style={{ fontSize: '0.8rem', color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}>
+                  View All & Badges ↓
+                </a>
+              </div>
               <ul className="cert-list">
                 {EDUCATION_DATA.certifications.map((cert, idx) => (
                   <li key={idx} className="cert-list-item">
                     <span className="cert-check-icon">✓</span>
                     <div className="cert-info">
                       <div className="cert-name">{cert.title}</div>
-                      <div className="cert-meta">{cert.issuer} · {cert.year}</div>
+                      <div className="cert-meta">
+                        {cert.issuer} · {cert.year}
+                        {cert.code && <span style={{ marginLeft: '6px', opacity: 0.8, fontFamily: 'var(--font-mono)', fontSize: '0.75rem' }}>({cert.code})</span>}
+                      </div>
                     </div>
                   </li>
                 ))}
