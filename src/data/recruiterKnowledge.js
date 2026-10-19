@@ -260,6 +260,23 @@ export const RECRUITER_KNOWLEDGE = [
     ]
   },
   {
+    id: 'github_contributions',
+    patterns: [
+      'github', 'contributions', 'commits', 'heatmap', 'activity', 'code frequency',
+      'repositories', 'repos', 'git profile', 'how active', 'open source'
+    ],
+    title: 'Verified GitHub Cadence & Contributions',
+    reply: `Mouiezuddin maintains a consistent, verified development cadence on GitHub:
+- **165+ Contributions in the last year** across production business tools, ACID financial engines, and backend APIs.
+- **8+ Active Repositories** showcasing Python/Django architectures, React 19 frontends, and automated Pytest test suites.
+- **Production Standard**: Uses descriptive atomic commits, feature branching, and TDD practices rather than one-off tutorial clones.
+- You can inspect his real commit history, test suites, and pull requests directly.`,
+    actions: [
+      { type: 'scroll', target: '#github-proof', label: 'View 165+ Heatmap & Repos' },
+      { type: 'github', label: 'Visit GitHub (@Mouiezuddin) ↗' }
+    ]
+  },
+  {
     id: 'greeting',
     patterns: ['hi', 'hello', 'hey', 'start', 'greetings', 'who are you', 'help'],
     title: 'Welcome to Mouiezuddin\'s Copilot',

@@ -2576,6 +2576,221 @@ code {
   background-color: var(--bg-surface);
 }
 
+/* ── GitHub Contributions & Cadence Card ─────────────────────────────────── */
+.github-contributions-card {
+  background-color: var(--bg-base);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: border-color var(--transition-normal);
+}
+
+.github-contributions-card:hover {
+  border-color: var(--border-highlight);
+}
+
+.github-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.github-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.github-avatar-badge {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-surface-raised);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.github-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.github-account-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.github-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--success);
+  background-color: var(--success-subtle);
+  border: 1px solid var(--success-border);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
+.github-username {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.github-stat-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: var(--bg-surface-raised);
+  border: 1px solid var(--border-card);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 600px) {
+  .github-stat-pill {
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+.github-stat-pill .stat-count {
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--success);
+  line-height: 1.1;
+}
+
+.github-stat-pill .stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+/* Heatmap Container */
+.github-heatmap-container {
+  background-color: #0d1117;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+[data-theme="light"] .github-heatmap-container {
+  background-color: #f6f8fa;
+  border-color: #d0d7de;
+}
+
+.heatmap-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+
+.github-heatmap-img {
+  width: 100%;
+  min-width: 680px;
+  max-width: 960px;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.heatmap-caption-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .heatmap-caption-row {
+  border-top-color: #e2e8f0;
+}
+
+.heatmap-caption {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.heatmap-verify-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.heatmap-verify-link:hover {
+  text-decoration: underline;
+}
+
+/* Engineering Metrics Strip */
+.github-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .github-metrics-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.github-metric-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.github-metric-item .metric-val {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.github-metric-item .metric-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
 .repos-grid {
   display: grid;
   grid-template-columns: 1fr;
