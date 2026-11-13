@@ -12,7 +12,7 @@ export default function AboutSection() {
             <div className="profile-frame">
               <img 
                 src="/avatar.jpg" 
-                alt="Mouiezuddin Killedar" 
+                alt="Mouiezuddin Killedar - Full-Stack Python Developer" 
                 className="profile-img" 
                 loading="lazy" 
               />
@@ -23,39 +23,92 @@ export default function AboutSection() {
                 <span className="meta-val">{PERSONAL_INFO.location}</span>
               </div>
               <div className="meta-item">
-                <span className="meta-lbl">CORE STACK</span>
+                <span className="meta-lbl">PRIMARY FOCUS</span>
                 <span className="meta-val">Python, Django, React, PostgreSQL</span>
               </div>
               <div className="meta-item">
+                <span className="meta-lbl">CAREER TARGET</span>
+                <span className="meta-val">Junior Full-Stack Python Developer</span>
+              </div>
+              <div className="meta-item">
                 <span className="meta-lbl">STATUS</span>
-                <span className="meta-val status-active">Open to Opportunities</span>
+                <span className="meta-val status-active">Available for Full-Time Roles</span>
               </div>
             </div>
           </div>
 
-          {/* Editorial Text */}
+          {/* Editorial Content */}
           <div className="about-text-col">
             <span className="section-eyebrow">ABOUT ME</span>
-            <h2 className="section-title">Practical Engineering Over Tech Lists</h2>
+            <h2 className="section-title">Building Software That Solves Real Problems</h2>
             
             <div className="about-editorial-content">
               <p className="about-lead">
-                I am a full-stack developer based in Bijapur, Karnataka, focused on building practical web applications and business systems that solve genuine everyday problems.
+                I am a junior full-stack developer based in Bijapur, Karnataka, dedicated to engineering practical, dependable software applications.
               </p>
+              
+              <div className="about-pillars-grid">
+                <div className="pillar-card">
+                  <span className="pillar-icon" aria-hidden="true">⚡</span>
+                  <div>
+                    <h3 className="pillar-title">Python &amp; Django Development</h3>
+                    <p className="pillar-desc">Building robust server-side architectures, clean class-based views, and maintainable services.</p>
+                  </div>
+                </div>
+
+                <div className="pillar-card">
+                  <span className="pillar-icon" aria-hidden="true">⚛</span>
+                  <div>
+                    <h3 className="pillar-title">React.js Frontend Engineering</h3>
+                    <p className="pillar-desc">Designing state-driven, componentized user interfaces that render fast on mobile and desktop screens.</p>
+                  </div>
+                </div>
+
+                <div className="pillar-card">
+                  <span className="pillar-icon" aria-hidden="true">🔌</span>
+                  <div>
+                    <h3 className="pillar-title">REST API Architecture</h3>
+                    <p className="pillar-desc">Constructing predictable, token-authenticated REST endpoints using Django REST Framework and Flask.</p>
+                  </div>
+                </div>
+
+                <div className="pillar-card">
+                  <span className="pillar-icon" aria-hidden="true">🗄</span>
+                  <div>
+                    <h3 className="pillar-title">Relational Database Design</h3>
+                    <p className="pillar-desc">Modeling normalized schemas in PostgreSQL, MySQL, and SQLite with composite indexing and ACID transactions.</p>
+                  </div>
+                </div>
+              </div>
+
               <p className="about-paragraph">
-                Rather than collecting programming languages or chasing fleeting framework trends, I care about software that works reliably in production—whether that means designing an ACID-compliant digital ledger for local retail shopkeepers, an inventory ERP for battery dealers, or responsive REST APIs with clean composite database indexing.
+                Rather than chasing fleeting trends, I prioritize practical problem-solving: whether that means building an ACID-compliant digital ledger for local shopkeepers (HisabPoint) or a real-world stock management platform for a battery and solar dealership (Royal Enterprises).
               </p>
-              <p className="about-paragraph">
-                My core stack is built on Python, Django, React, PostgreSQL, and modern web tooling. I enjoy working on clean relational database design, query latency reduction, and intuitive user interfaces for non-technical users.
-              </p>
-              <p className="about-paragraph highlight-box">
-                <strong>What I am looking for:</strong> I am actively seeking full-time junior to mid-level software engineering roles and selective freelance web product collaborations where I can contribute dependable code, thoughtful architecture, and immediate value.
-              </p>
+
+              <div className="about-objective-callout">
+                <strong>Career Target:</strong> I am actively seeking an entry-level / junior Full-Stack Python Developer or Software Engineer role where I can contribute dependable backend code, thoughtful API design, and collaborate with an engineering team.
+              </div>
             </div>
 
             <div className="about-cta-row">
-              <a href="#contact" className="btn btn-primary">Start a Conversation →</a>
-              <a href={PERSONAL_INFO.resumePath} download="Mouiezuddin_Killedar_Resume.pdf" className="btn btn-secondary">↓ Download Résumé</a>
+              <a href="#contact" className="btn btn-primary">
+                Get in Touch →
+              </a>
+              <a 
+                href={PERSONAL_INFO.resumePath} 
+                download="Mouiezuddin_Killedar_Resume.pdf" 
+                className="btn btn-secondary"
+              >
+                Download Résumé (PDF)
+              </a>
+              <a 
+                href={PERSONAL_INFO.github} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-outline"
+              >
+                View GitHub Repos ↗
+              </a>
             </div>
 
           </div>

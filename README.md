@@ -1,201 +1,92 @@
-<h1 align="center">
-  <br />
-  🚀 Mouiezuddin Killedar — Developer Portfolio
-  <br />
-</h1>
+# Mouiezuddin Killedar — Developer Portfolio
 
-<p align="center">
-  <strong>A 3D interactive storytelling portfolio built with React, Three.js & Vite</strong>
-</p>
+Production-ready, high-converting developer portfolio built with React 19, Vite 8, and a dark-minimal aesthetic engineered for technical recruiters, engineering hiring managers, and clients.
 
-<p align="center">
-  <a href="https://github.com/Mouiezuddin/Mouiezuddin_portfolio">
-    <img src="https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge" alt="Version" />
-  </a>
-  <a href="https://github.com/Mouiezuddin/Mouiezuddin_portfolio">
-    <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react" alt="React" />
-  </a>
-  <a href="https://github.com/Mouiezuddin/Mouiezuddin_portfolio">
-    <img src="https://img.shields.io/badge/Three.js-r184-black?style=for-the-badge&logo=three.js" alt="Three.js" />
-  </a>
-  <a href="https://github.com/Mouiezuddin/Mouiezuddin_portfolio">
-    <img src="https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite" alt="Vite" />
-  </a>
-  <a href="https://mouiezuddin.runs-on.dev">
-    <img src="https://img.shields.io/badge/status-live-brightgreen?style=for-the-badge" alt="Status" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="#-features">Features</a> •
-  <a href="#-tech-stack">Tech Stack</a> •
-  <a href="#-getting-started">Getting Started</a> •
-  <a href="#-project-structure">Project Structure</a> •
-  <a href="#-sections">Sections</a> •
-  <a href="#-contact">Contact</a>
-</p>
+- **Live Portfolio**: [https://mouiezuddin.runs-on.dev/](https://mouiezuddin.runs-on.dev/)
+- **GitHub**: [https://github.com/Mouiezuddin](https://github.com/Mouiezuddin)
+- **Primary Specialization**: Junior Full-Stack Python Developer (Python, Django, Django REST Framework, Flask, React.js, PostgreSQL, MySQL, REST APIs)
 
 ---
 
-## ✨ Features
+## 🚀 Key Highlights & Architecture
 
-- 🌐 **Immersive 3D Background** — Live Three.js WebGL canvas with an orbiting tech-keyword sphere and floating particles that respond to mouse movement
-- 📖 **Story-driven Layout** — A chapter-based narrative structure (Prologue → Origin → Craft → Works → Journey → Epilogue) instead of the usual generic sections
-- 🎨 **Multi-Theme Switcher** — Switch between curated colour themes (Amber, Cyan, Violet, etc.) with smooth CSS variable transitions
-- 🖥️ **Interactive Terminal Console** — An in-browser CLI for quick developer-style interaction in the Contact section
-- 📐 **Architecture Diagram** — A clickable interactive diagram showing the full-stack system design with technology nodes
-- 🚀 **Scroll-reveal Animations** — Every story block animates in with `IntersectionObserver` as you scroll through the narrative
-- 📄 **Auto-generated PDF Résumé** — `pdf-lib` powers a `generate-resume.js` script that builds a downloadable résumé on demand
-- 📱 **Fully Responsive** — Mobile-first layouts with fluid grids and flex-based components
-- ⚡ **Blazing Fast** — Powered by Vite 8 with tree-shaking and HMR for near-instant dev feedback
+1. **Immediate Recruiter Value (<10s Benchmark)**
+   - Clear professional positioning as a Junior Full-Stack Python Developer.
+   - Immediate access to view live projects, inspect GitHub code, and download the 1-page PDF résumé.
+
+2. **Real, Verifiable Featured Projects**
+   - **HisabPoint** ([Live Application](https://hisab-point.vercel.app/) | [GitHub Repository](https://github.com/Mouiezuddin/HisabPoint)): Digital customer ledger application built for local retail shopkeepers. Features customer ledger management, paid/due tracking, customer transaction records, and Django atomic transaction blocks (`@transaction.atomic`).
+   - **Royal Enterprises** ([Live Portal](https://royalenterprise.netlify.app/) | [GitHub Repository](https://github.com/Mouiezuddin/Stock_management-)): Commercial business website & stock management system for a solar equipment, inverter, and battery dealership with scrap battery trade-in calculations.
+   - **Library Management System** ([Live on Render](https://librarymanagementsystem-0cty.onrender.com)): Multi-role academic book catalog and circulation tracking with RBAC, overdue fine calculation, and indexed search.
+   - **Developer's Tale** ([Live on Render](https://developers-tale.onrender.com)): Technical blogging engine with PostgreSQL relational schema and rich-text publication.
+
+3. **Honest, Professional Credentials**
+   - **Experience**: Full Stack Developer Intern at Innoovatum Engineering & Technology LLP (verified certificate); Commercial delivery for Royal Enterprises.
+   - **Education**: Bachelor of Computer Applications (BCA) at Kumudben Darbar College, Rani Channamma University, Belagavi (8.5/10.0 GPA across completed coursework; completing final degree clearance examination).
+   - **Certifications**: Microsoft Copilot for Security (Coursera), AI-Integrated Python-Django Full-Stack (Innoovatum), Developing Interpersonal Skills (IBM), Data Analyst 101 (Simplilearn).
+
+4. **Curated Technical Skills Taxonomy**
+   - **Languages**: Python, JavaScript, HTML, CSS, SQL
+   - **Backend**: Django, Django REST Framework, Flask
+   - **Frontend**: React.js, Bootstrap
+   - **Database**: PostgreSQL, MySQL, SQLite
+   - **Tools**: Git, GitHub, Postman
+   - **Concepts**: REST APIs, Authentication, Authorization, CRUD, Responsive Design
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack & Tooling
 
-| Layer | Technology |
+| Domain | Technology |
 |---|---|
-| **Framework** | React 19 |
-| **Build Tool** | Vite 8 |
-| **3D Rendering** | Three.js r184 |
-| **Styling** | Vanilla CSS (design tokens via CSS variables) |
-| **PDF Generation** | pdf-lib |
-| **Deployment** | Vercel |
-| **Version Control** | Git & GitHub |
+| **Frontend Framework** | React 19 Single Page Application |
+| **Bundler & Build Tool** | Vite 8 |
+| **Styling** | Semantic Vanilla CSS with dark design tokens & fluid responsive breakpoints |
+| **PDF Generation** | `pdf-lib` (Node.js headless compilation) |
+| **SEO & Discovery** | Semantic HTML5, Open Graph, Twitter Cards, Sitemap.xml, Robots.txt, JSON-LD Schema |
+| **Hosting** | Vercel / Cloud CDN |
 
 ---
 
-## 🚀 Getting Started
+## 📦 Getting Started
 
 ### Prerequisites
+- Node.js 18+ (tested with Node 20+)
+- npm 9+
 
-- [Node.js](https://nodejs.org/) v18+ 
-- npm v9+
-
-### Installation
+### Installation & Development
 
 ```bash
-# 1. Clone the repository
+# 1. Clone repository
 git clone https://github.com/Mouiezuddin/Mouiezuddin_portfolio.git
 
-# 2. Navigate into the project directory
+# 2. Enter workspace
 cd Mouiezuddin_portfolio
 
 # 3. Install dependencies
 npm install
-```
 
-### Development
-
-```bash
-# Start the local dev server with HMR
+# 4. Start local development server
 npm run dev
 ```
-
-The app will be available at `http://localhost:5173`.
 
 ### Production Build
 
 ```bash
-# Build the production bundle
 npm run build
-
-# Preview the production build locally
-npm run preview
 ```
 
-### Generate Résumé
+### Regenerate Résumé PDF
 
 ```bash
-# Generates the PDF résumé into the /public directory
-node generate-resume.js
+npm run generate-resume
 ```
 
 ---
 
-## 📁 Project Structure
+## 📬 Contact & Opportunities
 
-```
-Mouiezuddin_portfolio/
-├── public/                     # Static assets served at root
-│   ├── assets/
-│   │   └── hero_bg.png         # Hero background image
-│   └── mouiezuddin_resume.pdf  # Downloadable résumé
-├── src/
-│   ├── components/
-│   │   ├── ThreeCanvas.jsx     # 3D WebGL background (Three.js)
-│   │   ├── TerminalConsole.jsx # Interactive CLI terminal widget
-│   │   ├── ContactForm.jsx     # Email contact form
-│   │   ├── ArchitectureDiagram.jsx # Clickable system architecture diagram
-│   │   ├── Skills.jsx          # Skill tags & categories
-│   │   ├── DashboardSandbox.jsx# Interactive dashboard demo
-│   │   └── ThemeSwitcher.jsx   # Multi-theme colour system
-│   ├── App.jsx                 # Root component — full page layout & chapters
-│   ├── main.jsx                # React entry point
-│   └── index.css               # Global styles & CSS design tokens
-├── generate-resume.js          # Node script — PDF résumé generator
-├── avatar.jpg                  # Profile photo
-├── vite.config.js              # Vite configuration
-├── package.json
-└── README.md
-```
-
----
-
-## 📚 Sections
-
-| Chapter | ID | Description |
-|---|---|---|
-| **Prologue** | `#prologue` | Hero section — name, title, tagline, and call-to-action |
-| **Chapter 01 — Origin** | `#origin` | About me, stats (8+ apps, 75% latency cut, 2000+ users) |
-| **Chapter 02 — The Craft** | `#craft` | Skills breakdown: Backend, Frontend, DevOps + live architecture diagram |
-| **Chapter 03 — The Works** | `#works` | 6 real production projects with live links and GitHub repos |
-| **Chapter 04 — The Journey** | `#journey` | Work experience (Innoovatum internship), Education (BCA 8.5 GPA), Certifications |
-| **Epilogue** | `#connect` | Interactive terminal + contact form |
-
----
-
-## 🎨 Themes
-
-The theme switcher supports multiple hand-curated palettes. All colours are driven by CSS custom properties, making theme switching instant and smooth:
-
-- 🟠 **Amber** *(default)* — Warm gold & sky blue
-- 🔵 **Cyan** — Electric teal & indigo
-- 🟣 **Violet** — Purple haze & rose
-- *(More themes available via the theme switcher panel)*
-
----
-
-## 📦 Featured Projects
-
-| # | Project | Stack | Status |
-|---|---|---|---|
-| 01 | [HisabPoint — Digital Bahi Khata](https://hisab-point.vercel.app) | React 19, TypeScript, Django REST, PostgreSQL, Vite, Tailwind | 🟢 Live |
-| 02 | [Library Management System](https://librarymanagementsystem-0cty.onrender.com) | Django 4.2, SQLite, Bootstrap 5 | 🟢 Live |
-| 03 | Restaurant & Ordering Platform | Django, PostgreSQL, React, REST API | 🔵 Backend |
-| 04 | [Developer's Tale Blog](https://developers-tale.onrender.com) | Django, PostgreSQL, Bootstrap 5 | 🟢 Live |
-| 05 | [Calorie Tracker](https://github.com/Mouiezuddin/Calories_Counter) | Django ORM, SQLite, JavaScript | 🛠️ Dev |
-| 06 | [SpendWise Expenses](https://github.com/Mouiezuddin/Expense_tracker) | Flask, Blueprints, SQLite | 🛠️ Dev |
-| 07 | [MedRemind System](https://github.com/Mouiezuddin/Medicine_remainder) | Flask, REST API, JavaScript | 🛠️ Dev |
-
----
-
-## 📬 Contact
-
-| Platform | Link |
-|---|---|
-| **GitHub** | [@Mouiezuddin](https://github.com/Mouiezuddin) |
-| **LinkedIn** | [mouiezuddin-killedar](https://linkedin.com/in/mouiezuddin-killedar) |
-| **Email** | [killedarmouiezuddin@gmail.com](mailto:killedarmouiezuddin@gmail.com) |
-
----
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
----
-
-<p align="center">
-  Built with ❤️ by <strong>Mouiezuddin Killedar</strong> · © 2026 · All Systems Operational
-</p>
+- **Email**: [killedarmouiezuddin@gmail.com](mailto:killedarmouiezuddin@gmail.com)
+- **LinkedIn**: [linkedin.com/in/mouiezuddin-killedar](https://linkedin.com/in/mouiezuddin-killedar)
+- **GitHub**: [github.com/Mouiezuddin](https://github.com/Mouiezuddin)
+- **Location**: Bijapur / Vijayapura, Karnataka, India (Available for Relocation, Hybrid, or Remote)

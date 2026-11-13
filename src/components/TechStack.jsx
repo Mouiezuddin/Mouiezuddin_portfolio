@@ -1,42 +1,66 @@
-import { TECH_STACK } from '../data/portfolioData';
+import { useState } from 'react';
+import { TECHNICAL_SKILLS } from '../data/portfolioData';
 
 export default function TechStack() {
-  const categories = [
-    { key: 'backend', title: 'Backend Systems', desc: 'Server architecture, API design, and transaction integrity', items: TECH_STACK.backend },
-    { key: 'frontend', title: 'Frontend & UI', desc: 'Component architectures, state management, and responsive layouts', items: TECH_STACK.frontend },
-    { key: 'database', title: 'Database & Storage', desc: 'Relational schema modeling, index optimization, and persistence', items: TECH_STACK.database },
-    { key: 'engineering', title: 'Engineering & DevOps', desc: 'Security protocols, version control, automated testing, and cloud deployment', items: TECH_STACK.engineering }
-  ];
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const categories = ['All', ...TECHNICAL_SKILLS.map((c) => c.category)];
+
+  const displayedSkills = selectedCategory === 'All'
+    ? TECHNICAL_SKILLS
+    : TECHNICAL_SKILLS.filter((c) => c.category === selectedCategory);
 
   return (
-    <section id="stack" className="section-tech-stack">
+    <section id="skills" className="section-tech-stack">
       <div className="container">
         
         {/* Section Header */}
         <div className="section-header-block">
-          <span className="section-eyebrow">CURATED TOOLKIT</span>
-          <h2 className="section-title">Technical Stack</h2>
+          <span className="section-eyebrow">PRACTICAL COMPETENCIES</span>
+          <h2 className="section-title">Technical Skills</h2>
           <p className="section-lead">
-            The technologies below are not a wishlist or a collection of keywords. They are tools I have actively deployed in working code, tested across production projects, and refined through real debugging cycles.
+            Organized by functional domains. Every technology listed below is a tool I can genuinely explain, demonstrate in working code, and defend in technical interviews.
           </p>
         </div>
 
-        {/* Stack Grid */}
-        <div className="stack-category-grid">
+        {/* Category Filter Tabs */}
+        <div className="skills-filter-nav" role="tablist" aria-label="Skill Categories">
           {categories.map((cat) => (
-            <div key={cat.key} className="stack-category-card">
-              <div className="stack-cat-header">
-                <h3 className="stack-cat-title">{cat.title}</h3>
-                <p className="stack-cat-desc">{cat.desc}</p>
+            <button
+              key={cat}
+              role="tab"
+              aria-selected={selectedCategory === cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`skills-filter-btn ${selectedCategory === cat ? 'active' : ''}`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Categories Grid */}
+        <div className="skills-categories-grid">
+          {displayedSkills.map((catGroup) => (
+            <div key={catGroup.category} className="skill-category-card">
+              <div className="skill-cat-header">
+                <div className="skill-cat-title-row">
+                  <h3 className="skill-cat-title">{catGroup.category}</h3>
+                  <span className="skill-count-badge">{catGroup.skills.length} skills</span>
+                </div>
+                <p className="skill-cat-desc">{catGroup.description}</p>
               </div>
-              <ul className="stack-item-list">
-                {cat.items.map((tech) => (
-                  <li key={tech.name} className="stack-item">
-                    <span className="stack-item-name">{tech.name}</span>
-                    <span className="stack-item-highlight">{tech.highlight}</span>
-                  </li>
+
+              <div className="skill-items-list">
+                {catGroup.skills.map((skill) => (
+                  <div key={skill.name} className="skill-item-row">
+                    <div className="skill-main-info">
+                      <span className="skill-name">{skill.name}</span>
+                      <span className="skill-highlight-tag">{skill.highlight}</span>
+                    </div>
+                    <p className="skill-note">{skill.note}</p>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>

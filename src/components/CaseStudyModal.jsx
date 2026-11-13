@@ -110,11 +110,11 @@ export default function CaseStudyModal({ project, onClose }) {
           )}
 
           {/* Technical Architecture */}
-          {project.caseStudy?.architecture && (
+          {(project.caseStudy?.architecture || project.caseStudy?.technicalImplementation) && (
             <div className="case-study-section">
-              <h3 className="section-label">Technical Architecture & Data Flow</h3>
+              <h3 className="section-label">Technical Architecture &amp; Implementation</h3>
               <div className="architecture-grid">
-                {project.caseStudy.architecture.map((arch, idx) => (
+                {(project.caseStudy.architecture || project.caseStudy.technicalImplementation).map((arch, idx) => (
                   <div key={idx} className="arch-card">
                     <div className="arch-label">{arch.label}</div>
                     <div className="arch-detail">{arch.detail}</div>

@@ -1,14 +1,13 @@
 /**
- * Portfolio Data Model
- * Real projects, authentic metrics, and factual engineering details.
+ * Portfolio Data Model — Mouiezuddin Killedar
+ * Verified technical information, honest academic standing, and production-tested projects.
  */
 
 export const PERSONAL_INFO = {
   name: "Mouiezuddin Killedar",
-  role: "Full-Stack Developer",
-  subRole: "Python · Django · React · PostgreSQL",
-  tagline: "Building practical software for real-world problems.",
-  shortBio: "I design and build reliable, database-backed web applications and business systems. Rather than collecting programming languages, I focus on building practical tools that solve genuine day-to-day operational pain points—from ACID-compliant digital ledgers to multi-role inventory ERPs.",
+  role: "Junior Full-Stack Python Developer",
+  headline: "Full-Stack Python Developer building practical web applications, scalable APIs, and intuitive digital experiences.",
+  shortBio: "I design and build reliable, database-backed web applications and business systems. Rather than collecting frameworks, I focus on building practical software that solves real operational problems—from customer credit ledgers to dealership inventory portals.",
   location: "Bijapur, Karnataka, India",
   email: "killedarmouiezuddin@gmail.com",
   phone: "+91 8867555660",
@@ -16,11 +15,10 @@ export const PERSONAL_INFO = {
   github: "https://github.com/Mouiezuddin",
   linkedin: "https://linkedin.com/in/mouiezuddin-killedar",
   resumePath: "/mouiezuddin_resume.pdf",
-  status: "Available for full-time engineering roles & selective freelance projects",
+  status: "Available for Full-Time Software Engineering Roles",
   gpa: "8.5 / 10.0",
   degree: "Bachelor of Computer Applications (BCA)",
-  college: "Kumudben Darbar College, Rani Channamma University, Belagavi",
-  gradDate: "June 2026"
+  college: "Kumudben Darbar College, Rani Channamma University, Belagavi"
 };
 
 export const FEATURED_PROJECTS = [
@@ -28,385 +26,378 @@ export const FEATURED_PROJECTS = [
     id: "hisabpoint",
     number: "01",
     title: "HisabPoint",
-    subtitle: "Digital Bahi Khata & Cloud Ledger for Local Merchants",
-    category: "Small Business FinTech",
+    subtitle: "Digital Customer Ledger & Khata for Local Shopkeepers",
+    category: "FinTech & Ledger Management",
     badge: "Live Production",
     badgeType: "production",
     image: "/assets/hisabpoint_preview.png",
     hasRealImage: true,
-    oneLiner: "A mobile-first digital accounting ledger built for Indian retail shopkeepers to eliminate manual paper notebook errors and credit calculation disputes.",
-    problem: "Small kirana and retail shopkeepers struggle to track daily customer credits (udhar), partial repayments, and outstanding balances using handwritten paper khatas. Manual bookkeeping leads to lost pages, calculation disputes, zero audit trail, and high vulnerability to physical damage or lost records.",
-    solution: "Designed and engineered a culturally tailored 'Bahi Khata' web application that mimics traditional ledger ergonomics (warm parchment aesthetics, clear credit/debit distinctions) while backing transactions with an ACID-compliant Django REST + PostgreSQL ledger engine.",
+    oneLiner: "A mobile-friendly digital ledger designed for local retail merchants to record customer transactions, monitor unpaid balances, and reduce bookkeeping mistakes.",
+    problem: "Local retail shopkeepers and kirana store owners traditionally rely on handwritten paper notebooks (bahi khata) to record daily customer credits and partial repayments. Manual notebooks frequently suffer from lost pages, calculation disputes, and zero audit history.",
+    solution: "A digital customer ledger application that simplifies transaction recording for non-technical merchants while enforcing database-level atomicity on every transaction entry.",
+    myContribution: "Architected the complete full-stack application: engineered the React.js frontend interface with high-contrast ledger ergonomics, designed the PostgreSQL schema, and built Django REST Framework APIs with atomic database transactions.",
     keyFeatures: [
-      "Customer khata ledger with phone/name indexing and instant balance summaries",
-      "ACID-compliant credit/debit transaction logging via Django's @transaction.atomic",
-      "<200ms counter checkout query latency achieved via composite database indexes",
-      "Enterprise fraud prevention: 5-attempt, 30-minute lockout system + Google Authenticator TOTP 2FA",
-      "Daily and monthly collection reports with customer transaction history summaries",
-      "40+ automated test suite across Django APITestCase and Vitest with 100% pass rate"
+      "Customer ledger management with fast name and phone lookup",
+      "Real-time tracking of paid, due, and net outstanding balances",
+      "Detailed customer transaction history with timestamps and notes",
+      "Atomic credit/debit transaction logging preventing partial record updates",
+      "Fast checkout lookups with composite database indexing on customer records"
     ],
-    tech: ["React 19", "TypeScript", "Python", "Django REST Framework", "PostgreSQL", "Vite", "Tailwind CSS"],
+    tech: ["React.js", "Python", "Django", "Django REST Framework", "PostgreSQL", "JavaScript", "HTML/CSS"],
     links: {
-      live: "https://hisab-point.vercel.app",
+      live: "https://hisab-point.vercel.app/",
       github: "https://github.com/Mouiezuddin/HisabPoint"
     },
     caseStudy: {
-      overview: "HisabPoint is a production-deployed digital ledger created to bridge the gap between traditional Indian merchant bookkeeping and modern cloud accounting. By speaking the visual and procedural language of local retail shopkeepers, it eliminates friction while ensuring rock-solid mathematical accuracy.",
+      overview: "HisabPoint is a production-deployed digital accounting ledger created to solve the real friction small retail merchants face when recording customer credit (udhar). Designed with mobile-first ergonomics and clear debit/credit balance summaries, it provides shopkeepers with instant mathematical clarity.",
+      problemDetail: "Paper ledgers tear, fade, and allow human calculation errors when customers make staggered repayments. When a shopkeeper has 100+ active credit customers, reconciling daily totals takes hours.",
       userFlow: [
-        "Merchant logs in with password and optional Google Authenticator 2FA verification.",
-        "Dashboard immediately presents total outstanding receivables (Market Udhar) and customer directory.",
-        "During counter checkout, merchant searches customer by name or phone (<200ms query).",
-        "Adds credit purchase or logs repayment with item description and timestamp.",
-        "System executes atomic transaction, updates ledger history, and recalibrates net balance with zero drift."
+        "Shopkeeper logs into the ledger dashboard with secure authentication.",
+        "Dashboard displays total outstanding customer credit and a quick-search customer list.",
+        "Shopkeeper searches for a customer by name or phone number.",
+        "Logs a credit purchase (amount given) or repayment (amount received) with a description.",
+        "Database executes atomic update, recalculating the customer's outstanding balance immediately."
       ],
-      architecture: [
-        { label: "Frontend", detail: "React 19 with TypeScript, Vite bundling, and mobile-first responsive layout tailored for low-cost Android smartphones." },
-        { label: "Backend API", detail: "Django REST Framework with granular serializers, viewsets, and rate-limiting throttling middleware." },
-        { label: "Database Layer", detail: "PostgreSQL with composite indexes (customer_id, created_at) and ACID transaction constraints." },
-        { label: "Security", detail: "Client + server dual-enforced 5-attempt brute-force lockout and RFC 6238 TOTP two-factor authentication." }
+      technicalImplementation: [
+        { label: "Frontend Architecture", detail: "Built with React.js using modular state management, debounced search inputs, and responsive card layouts designed for quick counter entry." },
+        { label: "Backend API", detail: "Django REST Framework endpoints handling customer CRUD, transaction logs, and aggregated balance calculations." },
+        { label: "Database Integrity", detail: "PostgreSQL relational database with atomic transaction blocks ensuring credit decrements and debit increments commit as one unit or roll back." },
+        { label: "Query Optimization", detail: "Composite indexing on (customer_id, created_at) to ensure fast ledger retrieval even as history entries grow." }
       ],
       decisions: [
-        "Chose PostgreSQL atomic transactions (@transaction.atomic) over async eventual consistency because financial data cannot tolerate partial updates or race conditions.",
-        "Used composite indexing (customer_id, created_at) to avoid full table scans as transaction volumes grow into thousands of entries per merchant.",
-        "Adopted traditional parchment & warm leather UI accents to respect existing merchant habits rather than imposing sterile corporate SaaS aesthetics."
+        "Enforced atomic transaction blocks in Django to eliminate partial updates or balance drift.",
+        "Kept the UI layout focused on high-contrast numerals and clear green (paid) vs red (due) indicators so shopkeepers can read amounts under bright sunlight.",
+        "Used client-side input validation paired with strict DRF serializer validation for defense-in-depth."
       ],
-      challenges: "Balancing strict cryptographic security with the simplicity demanded by non-technical retail store owners. Solved by implementing one-click session resumption with biometric-friendly local fallbacks alongside server-side session revoking."
+      challenges: "Ensuring non-technical store owners can operate the software in seconds during rapid customer checkouts. Resolved by minimizing required input steps and adding immediate balance updates without full page reloads."
     }
   },
   {
     id: "royal-enterprises",
     number: "02",
     title: "Royal Enterprises",
-    subtitle: "Battery & Lighting Stock Management System",
-    category: "B2B Inventory & Sales ERP",
-    badge: "Production / Staging",
+    subtitle: "Stock Management & Business Portal for Battery & Solar Systems",
+    category: "B2B Stock Management & Sales",
+    badge: "Live Client Portal",
     badgeType: "production",
     image: "/assets/royal_enterprises.jpg",
     hasRealImage: true,
-    oneLiner: "An end-to-end inventory, sales invoicing, and warranty tracking web platform built specifically for battery, inverter, and solar equipment dealerships.",
-    problem: "Battery and solar equipment retailers face complex operational hurdles: tracking individual battery serial numbers, monitoring manufacturer warranty periods, managing scrap core allowances (trade-in discounts for old lead-acid batteries), and reconciling distributor shipments against physical shelf stock.",
-    solution: "A centralized web ERP that automates stock movements (inward purchases, retail counter sales, dealer adjustments), logs battery serial numbers, calculates core scrap trade-in deductions on invoices, and triggers automated low-stock warnings.",
+    oneLiner: "A business portal and stock management system built for a regional dealership handling batteries, inverters, solar equipment, and EV charging solutions.",
+    problem: "Battery and solar equipment dealerships deal with multi-brand inventory (Okaya, Exide, Microtek), warranty periods, and a unique commercial challenge: calculating scrap trade-in allowances for old lead-acid batteries during new purchases.",
+    solution: "A centralized web platform that presents product catalogs for solar, battery, and inverter lines, tracks stock inward/outward movements, logs customer purchases, and calculates old battery scrap discounts directly on invoices.",
+    myContribution: "Designed the product database, built responsive React.js UI views for inventory management and customer inquiries, implemented REST APIs with Django, and deployed the portal to Netlify.",
     keyFeatures: [
-      "Inventory catalog with AH capacity classifications, brand categorization, and serial logging",
-      "Core exchange module: automatically applies old battery scrap discounts during checkout",
-      "Automated low-stock threshold alerts preventing stockouts on high-demand inverter batteries",
-      "Customer sales billing with GST-compliant invoice generation and transaction logs",
-      "Supplier purchase tracking and distributor inventory reconciliation",
-      "JWT-authenticated role-based access separating counter cashiers from store administrators"
+      "Product catalog for solar panels, inverters, batteries, lighting, and EV chargers",
+      "Stock inventory tracking with inward distributor logs and outward sales",
+      "Automated battery scrap core trade-in deduction logic on billing records",
+      "Customer inquiry routing and WhatsApp digital invoice dispatch",
+      "Role-based authentication separating administrative and sales staff actions"
     ],
-    tech: ["Python 3.11", "Django 5.0", "Django REST Framework", "React 19", "Vite", "Tailwind CSS", "PostgreSQL", "JWT Auth"],
+    tech: ["React.js", "Python", "Django", "Django REST Framework", "PostgreSQL", "REST APIs", "Tailwind CSS"],
     links: {
-      live: "https://royalenterprise.netlify.app",
+      live: "https://royalenterprise.netlify.app/",
       github: "https://github.com/Mouiezuddin/Stock_management-"
     },
     caseStudy: {
-      overview: "Royal Enterprises is a multi-brand battery and solar distributor operating in regional markets. This custom ERP replaced fragile paper registers and Excel spreadsheets with a unified system tracking thousands of inventory units across batteries, inverters, UPS units, and solar luminaires.",
+      overview: "Royal Enterprises is an active commercial web platform developed for a multi-brand battery, solar luminaire, and inverter dealership. It modernized the business from paper registers and loose billing receipts to an accessible, cloud-backed stock portal.",
+      problemDetail: "Lead-acid battery sales heavily involve core exchange (where a customer returns an old dead battery for scrap credit). Manually calculating scrap deductions, matching warranty serials, and tracking reorder thresholds on paper created constant inventory mismatch.",
       userFlow: [
-        "Inward stock arrival: Store manager enters distributor invoice and logs batch serial numbers.",
-        "Customer counter checkout: Cashier selects battery model, enters vehicle/customer info, and inputs old battery exchange weight/deduction if applicable.",
-        "Invoice generated with serial registration for warranty verification.",
-        "Stock decrement reflected instantly across inventory dashboards."
+        "Dealer or customer browses categorized solar, battery, inverter, or EV charging products.",
+        "Cashier selects the purchased product model from the active inventory catalog.",
+        "Inputs customer details and applies old battery trade-in weight/scrap discount if applicable.",
+        "System creates the sale record, decrements stock count, and generates a digital receipt summary.",
+        "Dealer can share invoice details directly to customer via WhatsApp."
       ],
-      architecture: [
-        { label: "Frontend", detail: "React 19 Single Page Application styled with Tailwind CSS, supporting fast keyboard-driven counter data entry." },
-        { label: "Backend", detail: "Django 5 REST Framework with custom viewsets for inventory movements and automated audit logging." },
-        { label: "Database", detail: "PostgreSQL relational schema with foreign key constraints across products, serials, purchases, and invoices." },
-        { label: "Authentication", detail: "Stateless JWT authentication with automated refresh tokens and role permissions." }
+      technicalImplementation: [
+        { label: "Frontend Portal", detail: "React.js single-page application with responsive product grids, category filtering, and modal order summaries." },
+        { label: "Backend API", detail: "Django REST Framework micro-endpoints providing CRUD operations for inventory items, categories, and sales logs." },
+        { label: "Database Layer", detail: "Relational PostgreSQL database tracking products, battery AH capacities, sales transactions, and distributor inward shipments." },
+        { label: "Deployment", detail: "Frontend hosted with continuous deployment on Netlify; backend API deployed on cloud infrastructure." }
       ],
       decisions: [
-        "Modeled old battery scrap exchange as a first-class transaction line item because scrap value is a critical margin driver in the Indian automotive battery trade.",
-        "Implemented real-time threshold monitoring via database triggers to warn managers when stock falls below 3 units."
+        "Modeled old battery scrap discount as a dedicated line item in transaction records to preserve clean accounting margins.",
+        "Implemented real-time stock status badges (In Stock, Low Stock, Reorder Required) based on quantity thresholds."
       ],
-      challenges: "Handling rapid counter sales during peak business hours without slow UI response. Optimized serializer queries and implemented debounced product search to keep counter operations instant."
+      challenges: "Managing complex product taxonomy across different equipment types (solar modules vs tubular inverter batteries vs EV chargers). Solved by creating clean relational category hierarchies with normalized attribute tables."
     }
   },
   {
-    id: "lms-platform",
+    id: "library-management",
     number: "03",
-    title: "AI Learning Platform",
-    subtitle: "Full-Stack Learning Management System with AI Study Tools",
-    category: "EdTech & Learning Architecture",
-    badge: "Working MVP",
-    badgeType: "prototype",
-    image: null,
-    placeholderType: "lms",
-    hasRealImage: false,
-    oneLiner: "A unified learning management platform combining structured curriculum progression, interactive coding exercises, and AI-assisted revision tools.",
-    problem: "Students and bootcamp learners juggle disconnected tools: video platforms for lessons, external judge sites for coding practice, separate flashcard apps, and fragmented revision notes. This fragmentation leads to lost progress continuity and inefficient study routines.",
-    solution: "Engineered an integrated educational platform that brings course progression, in-browser code evaluation, and LLM-assisted study tools into a single authenticated workspace with role-based access for students, educators, and administrators.",
+    title: "Library Management System",
+    subtitle: "Multi-Role Academic Catalog & Book Circulation Platform",
+    category: "Academic & Enterprise Management",
+    badge: "Live on Render",
+    badgeType: "production",
+    image: "/assets/architecture_concept.png",
+    hasRealImage: true,
+    oneLiner: "A multi-role book catalog and circulation tracking system featuring role-based access control, book issuance calendars, and fast catalog search.",
+    problem: "Academic departments and libraries require organized book tracking, member records, and overdue penalty calculations. Using manual register logs leads to misplaced books and untracked returns.",
+    solution: "Engineered a Django-powered web portal with three distinct user roles (Admin, Librarian, Student/Member) that manages book acquisitions, automated issuance durations, and catalog availability.",
+    myContribution: "Built the entire application from schema design to deployment: configured Django models with relational integrity, created role-based access permissions, wrote unit tests, and deployed to Render.",
     keyFeatures: [
-      "Role-based authentication & dashboards (Student, Educator, Administrator)",
-      "Course curriculum and module content delivery engine",
-      "Interactive in-browser coding workspace with syntax highlighting and practice assessments",
-      "AI Study Companion: dynamic topic explanation generator and smart flashcard generator",
-      "Student progress and assessment milestone tracking",
-      "Clearly Labeled Planned Roadmap: AI Mock Interview Simulator and automated ATS resume feedback"
+      "Role-Based Access Control (RBAC) separating administrative, staff, and member views",
+      "Full catalog CRUD with instant title, author, and ISBN search indexing",
+      "Automated issue duration tracking and overdue fine calculation engine",
+      "Member borrowing history and active loan status dashboard",
+      "RESTful endpoint integration for catalog data consumption"
     ],
-    tech: ["React", "Python", "Django REST Framework", "PostgreSQL", "OpenAI API", "Vite", "Tailwind CSS", "JWT Auth"],
+    tech: ["Python", "Django", "SQLite", "Bootstrap", "JavaScript", "HTML5", "CSS3", "REST APIs"],
     links: {
+      live: "https://librarymanagementsystem-0cty.onrender.com",
       github: "https://github.com/Mouiezuddin"
     },
     caseStudy: {
-      overview: "An architectural prototype designed to provide a comprehensive learning and assessment platform. It demonstrates full-stack software integration, token-budgeted AI endpoint orchestration, and strict role-based permission boundaries.",
+      overview: "A production-grade library circulation system engineered with Django to streamline catalog management, member borrowing privileges, and book availability in institutional settings.",
+      problemDetail: "Tracking hundreds of physical volumes, issue dates, return deadlines, and overdue fines manually in physical ledgers results in lost assets and delayed returns.",
       userFlow: [
-        "Student authenticates into personal learning dashboard showing active courses and progress.",
-        "Navigates through modular lessons and launches interactive coding exercises.",
-        "Requests AI-assisted explanations or generates topic flashcards when encountering difficult concepts.",
-        "Educator monitors cohort completion rates and updates quiz questions through instructor portal."
+        "Librarian logs into the staff portal and scans or searches book title/ISBN.",
+        "Selects registered member and issues book with automated due date generation.",
+        "Students log in to browse available titles, check current loans, and review due dates.",
+        "System calculates fine increments automatically when books are returned past due."
       ],
-      architecture: [
-        { label: "Frontend", detail: "React SPA with componentized course viewer, coding editor sandbox, and interactive flashcard state machine." },
-        { label: "Backend", detail: "Django REST Framework with granular permission classes separating student submissions from instructor grading keys." },
-        { label: "AI Integration", detail: "OpenAI API proxy with rate limiting, prompt sanitization, and structured JSON output parsing." },
-        { label: "Database", detail: "PostgreSQL modeling users, roles, courses, lessons, submissions, and generated study artifacts." }
+      technicalImplementation: [
+        { label: "Backend Core", detail: "Django web framework utilizing Django ORM for complex queries and foreign key relationships between books, members, and transactions." },
+        { label: "Security & Permissions", detail: "Django authentication with custom user groups and decorator-enforced role permissions." },
+        { label: "Search Optimization", detail: "Database query filtering with indexed search fields for sub-second catalog lookups." },
+        { label: "Frontend", detail: "Clean, responsive Bootstrap 5 interface accessible across desktop workstations and mobile browsers." }
       ],
       decisions: [
-        "Explicitly segregated AI generation requests into asynchronous proxy endpoints to prevent API timeout errors during long completions.",
-        "Separated core LMS database records from transient AI summaries to avoid schema pollution."
+        "Employed Django's built-in User model with one-to-one profile extensions for role classification.",
+        "Used database transaction checks to guarantee that book availability count cannot drop below zero."
       ],
-      challenges: "Distinguishing implemented core capabilities from conceptual additions. All completed modules (curriculum, auth, coding sandbox, flashcards) are operational, while advanced career prep features are formally segmented as roadmap items."
+      challenges: "Preventing race conditions where multiple students try to issue the last available copy of a textbook. Solved by wrapping issuance operations in database validation checks before decrementing stock."
     }
   },
   {
-    id: "vehicle-assist",
+    id: "developers-tale",
     number: "04",
-    title: "VehicleAssist",
-    subtitle: "On-Demand Roadside Assistance Platform",
-    category: "Geospatial Dispatch Prototype",
-    badge: "Concept MVP",
-    badgeType: "concept",
-    image: null,
-    placeholderType: "dispatch",
-    hasRealImage: false,
-    oneLiner: "A location-aware roadside assistance prototype connecting stranded motorists with verified service providers through real-time geospatial dispatch.",
-    problem: "Motorists experiencing unexpected highway breakdowns, flat tires, or mechanical failures lack a transparent, reliable way to summon nearby assistance with upfront cost estimates and verifiable technician arrival times.",
-    solution: "A mobile-first roadside assistance prototype modeling the full dispatch lifecycle—from customer emergency incident reporting and geospatial provider matching to live service state tracking and completion review.",
+    title: "Developer's Tale Blog Platform",
+    subtitle: "Technical Blogging & Article Publishing Engine",
+    category: "Content & Web Publishing",
+    badge: "Live on Render",
+    badgeType: "production",
+    image: "/assets/coding_concept.png",
+    hasRealImage: true,
+    oneLiner: "A technical publication platform supporting rich-text article drafting, category taxonomies, author profiles, and interactive reader discussions.",
+    problem: "Developers and students benefit from having a structured, distraction-free publishing space for engineering notes, code walkthroughs, and tutorials with clean category navigation.",
+    solution: "Engineered a content publishing web application with Django and PostgreSQL, featuring secure user authentication, tag-based article filtering, and responsive article layouts.",
+    myContribution: "Developed the full backend architecture, database schema, search queries, user comment moderation, and deployed the live application to Render with a PostgreSQL database.",
     keyFeatures: [
-      "Geolocation-enabled service request creation with breakdown category selector (towing, flat tire, battery, fuel)",
-      "Provider dispatch matching based on nearest eligible technician coordinates via Leaflet & OpenStreetMap",
-      "Finite-state job workflow: Requested → Assigned → En Route → In Progress → Completed",
-      "Secure authentication using JWT in httpOnly cookies with explicit CSRF token verification",
-      "Seeded demonstration test suite with 15 test accounts (5 customers, 10 mechanics) validating workflow stability",
-      "Clearly Labeled Status: Architectural Prototype & Concept MVP (Not an operational emergency dispatch)"
+      "Rich-text article creation and editing pipeline with draft/published states",
+      "Taxonomy engine with category filtering and tag-based discovery",
+      "User authentication, profile management, and reader commenting system",
+      "PostgreSQL relational database with foreign key cascades and indexes",
+      "Responsive, accessible reading interface styled with modern CSS and Bootstrap"
     ],
-    tech: ["React", "Vite", "Tailwind CSS", "Leaflet / OSM", "Python", "Django REST Framework", "PostgreSQL", "JWT / httpOnly"],
+    tech: ["Python", "Django", "PostgreSQL", "Bootstrap", "JavaScript", "HTML5", "CSS3"],
     links: {
-      github: "https://github.com/Mouiezuddin"
+      live: "https://developers-tale.onrender.com",
+      github: "https://github.com/Mouiezuddin/Blog_platform"
     },
     caseStudy: {
-      overview: "VehicleAssist is an architectural MVP developed to demonstrate geospatial matching, stateful asynchronous job progression, and cookie-secured REST authentication in an on-demand service economy context.",
+      overview: "Developer's Tale is a full-featured web publishing platform built with Django and deployed live on Render with managed PostgreSQL. It demonstrates clean relational architecture, content moderation, and responsive readability.",
+      problemDetail: "Generic content platforms often suffer from slow page weight, bloated tracking scripts, and awkward code snippet formatting. Developer's Tale was designed to prioritize fast loading and technical clarity.",
       userFlow: [
-        "Stranded driver submits incident details: vehicle type, issue category, and coordinates.",
-        "Backend query evaluates nearest available service providers within eligible radius.",
-        "Provider receives push dispatch notification and accepts the job.",
-        "Customer tracks provider status transitions until service completion and submits feedback."
+        "Author registers and authenticates to access the content creation dashboard.",
+        "Drafts technical posts with categorized tags and markdown formatting.",
+        "Published articles appear instantly on the chronological frontpage feed.",
+        "Readers can filter by topic, search keywords, and leave moderated comments."
       ],
-      architecture: [
-        { label: "Frontend", detail: "React application integrated with Leaflet map markers, reactive status badges, and mobile-optimized request wizards." },
-        { label: "Backend", detail: "Django REST Framework service modeling a strict finite-state transition machine for dispatch reliability." },
-        { label: "Security", detail: "Defense-in-depth auth: JWT stored exclusively in httpOnly cookies alongside SameSite protection and Django CSRF tokens." },
-        { label: "Database", detail: "PostgreSQL schema storing geospatial coordinates, provider capabilities, incident logs, and ratings." }
+      technicalImplementation: [
+        { label: "Backend Framework", detail: "Django with class-based views (CBVs) for clean, maintainable CRUD operations." },
+        { label: "Database", detail: "Production PostgreSQL database on Render with indexed slug fields and relationship constraints." },
+        { label: "Security", detail: "CSRF protection on all forms, password hashing using PBKDF2, and sanitized HTML input." }
       ],
       decisions: [
-        "Used httpOnly cookies for JWT storage instead of browser localStorage to protect sensitive session tokens from cross-site scripting (XSS) risks.",
-        "Implemented strict finite-state machine validation on the backend to make illegal job state jumps (e.g. Requested directly to Completed) impossible."
+        "Used URL slug fields with database indexing for clean, SEO-friendly article permalinks.",
+        "Structured category relationships via Many-to-Many models with prefetch_related optimization to avoid N+1 query overhead."
       ],
-      challenges: "Ensuring clarity about project scope. The platform is framed honestly as an architectural prototype with full demonstration seed data rather than an operational municipal emergency service."
+      challenges: "Maintaining fast database read times on article feeds as comment counts increase. Resolved by optimizing querysets with select_related on author and category fields."
     }
   }
 ];
 
 export const MORE_PROJECTS = [
   {
-    title: "Library Management System",
-    description: "Replaced spreadsheet tracking for 50+ concurrent users with multi-role RBAC, full catalog CRUD, and 0.3s full-text search indexing.",
-    tech: ["Django 4.2", "SQLite", "Bootstrap 5", "Render"],
-    status: "Live Production",
-    live: "https://librarymanagementsystem-0cty.onrender.com",
-    github: "https://github.com/Mouiezuddin"
-  },
-  {
-    title: "Restaurant & Ordering Platform",
-    description: "E-commerce menu catalogs, dynamic cart routing, order pipeline management, and role-based administrative dashboards.",
-    tech: ["Django", "PostgreSQL", "React", "REST API"],
-    status: "Backend Architecture",
-    github: "https://github.com/Mouiezuddin"
-  },
-  {
-    title: "Developer's Tale Blog Platform",
-    description: "Technical blogging platform with rich-text publishing, category filtering, user moderation, and 99%+ uptime deployment.",
-    tech: ["Django", "PostgreSQL", "Bootstrap 5", "Render"],
-    status: "Live Production",
-    live: "https://developers-tale.onrender.com",
-    github: "https://github.com/Mouiezuddin/Blog_platform"
-  },
-  {
     title: "Calorie & Nutrition Tracker",
-    description: "Health analytics engine tracking daily caloric intake, macro breakdowns, and historical trends with zero-latency REST lookups.",
-    tech: ["Django ORM", "SQLite", "JavaScript", "REST"],
+    description: "Dietary health application tracking daily caloric intake, meal macronutrient breakdowns, and historical nutrition logs with zero-latency lookups.",
+    tech: ["Python", "Django", "SQLite", "JavaScript", "REST"],
     status: "Active Repo",
     github: "https://github.com/Mouiezuddin/Calories_Counter"
   },
   {
     title: "SpendWise Expense Tracker",
-    description: "Personal expense management structured around modular Flask blueprints with session-secured CRUD and visual budget breakdowns.",
-    tech: ["Flask", "Blueprints", "SQLite", "CSS3"],
+    description: "Personal expense management platform structured around modular Flask blueprints with session-secured CRUD, category tagging, and budget breakdowns.",
+    tech: ["Python", "Flask", "SQLite", "JavaScript", "CSS3"],
     status: "Active Repo",
     github: "https://github.com/Mouiezuddin/Expense_tracker"
   },
   {
     title: "MedRemind Medication Assistant",
     description: "Patient medication reminder system with dosage interval triggers, secure profiles, and clean DOM-driven interfaces.",
-    tech: ["Flask", "REST API", "JavaScript", "HTML5"],
+    tech: ["Python", "Flask", "REST APIs", "JavaScript", "HTML5"],
     status: "Active Repo",
     github: "https://github.com/Mouiezuddin/Medicine_remainder"
+  },
+  {
+    title: "Retail POS Billing System",
+    description: "Point-of-sale billing dashboard for small retail shops featuring barcode input listener, instant thermal receipt formatting, and local inventory sync.",
+    tech: ["React.js", "Django REST Framework", "Vite", "SQLite"],
+    status: "Active Repo",
+    github: "https://github.com/Mouiezuddin"
   }
 ];
 
-export const ENGINEERING_PRINCIPLES = [
+/**
+ * TECHNICAL SKILLS — Exact 6 categories requested:
+ * 1. Languages: Python, JavaScript, HTML, CSS, SQL.
+ * 2. Backend: Django, Django REST Framework, Flask.
+ * 3. Frontend: React.js, Bootstrap.
+ * 4. Database: PostgreSQL, MySQL, SQLite.
+ * 5. Tools: Git, GitHub, Postman.
+ * 6. Concepts: REST APIs, Authentication, Authorization, CRUD, Responsive Design.
+ */
+export const TECHNICAL_SKILLS = [
   {
-    title: "ACID Transactions & Financial Precision",
-    description: "In ledger and financial systems like HisabPoint, partial updates cause catastrophic financial drift. I enforce atomic transaction blocks (@transaction.atomic) so that credit decrements and debit increments commit as one unit or roll back entirely.",
-    icon: "database-shield"
+    category: "Languages",
+    description: "Core programming and query languages used daily across projects",
+    skills: [
+      { name: "Python", highlight: "Primary Language", note: "Object-oriented programming, scripting, data handling, and backend services" },
+      { name: "JavaScript", highlight: "Frontend Logic", note: "ES6+, asynchronous fetch, DOM manipulation, and reactive UI state" },
+      { name: "HTML", highlight: "Semantic Markup", note: "Accessible structure, semantic elements, and SEO markup" },
+      { name: "CSS", highlight: "Responsive Styling", note: "Flexbox, Grid, CSS custom properties, and fluid typography" },
+      { name: "SQL", highlight: "Relational Queries", note: "Complex joins, indexing, transactions, and schema normalization" }
+    ]
   },
   {
-    title: "Query Optimization & Composite Indexing",
-    description: "Counter software cannot lag while customers wait in line. By implementing composite indexes (customer_id, created_at) and eliminating N+1 queries via select_related() and prefetch_related(), I squeeze query latency down to <200ms.",
-    icon: "bolt"
+    category: "Backend",
+    description: "Server-side frameworks for building production web services",
+    skills: [
+      { name: "Django", highlight: "Primary Framework", note: "ORM modeling, middleware, admin interface, and templating" },
+      { name: "Django REST Framework", highlight: "API Architecture", note: "Serializers, ViewSets, token authentication, and pagination" },
+      { name: "Flask", highlight: "Lightweight Services", note: "Microservices, modular Blueprints, and custom route handlers" }
+    ]
   },
   {
-    title: "Layered Security & Fraud Lockout",
-    description: "Authentication isn't just about login forms. I engineer dual-enforced rate-limit lockout systems (5 failed attempts trigger a 30-minute freeze) alongside Google Authenticator TOTP 2FA and httpOnly cookie-based JWT storage with CSRF validation.",
-    icon: "lock"
+    category: "Frontend",
+    description: "Modern component libraries and responsive UI toolkits",
+    skills: [
+      { name: "React.js", highlight: "Component SPAs", note: "Hooks (useState, useEffect, useRef), component lifecycle, and state flow" },
+      { name: "Bootstrap", highlight: "Responsive Grid", note: "Mobile-first layouts, utility classes, and accessible UI widgets" }
+    ]
   },
   {
-    title: "Multi-Role RBAC & Clean REST APIs",
-    description: "I structure backend services with granular permission classes in Django REST Framework, cleanly isolating customer, cashier, instructor, and admin boundaries across unified API endpoints.",
-    icon: "users"
+    category: "Database",
+    description: "Relational database engines with ACID compliance",
+    skills: [
+      { name: "PostgreSQL", highlight: "Production Relational DB", note: "Complex constraints, composite indexes, and ACID transactions" },
+      { name: "MySQL", highlight: "Enterprise RDBMS", note: "Relational schemas, foreign keys, and query optimization" },
+      { name: "SQLite", highlight: "Development & Testing", note: "Lightweight database storage for local testing and prototyping" }
+    ]
   },
   {
-    title: "Automated Testing & Regressions Prevention",
-    description: "Before shipping any deployment, stability is verified with automated test suites across Django APITestCase and Vitest/Pytest to guarantee 100% pass rates across critical authentication, billing, and balance calculations.",
-    icon: "check-circle"
+    category: "Tools",
+    description: "Industry-standard developer tooling and API testing",
+    skills: [
+      { name: "Git", highlight: "Version Control", note: "Branching workflows, atomic commits, rebasing, and merge resolution" },
+      { name: "GitHub", highlight: "Collaboration & CI", note: "Repository management, pull requests, issue tracking, and actions" },
+      { name: "Postman", highlight: "API Testing", note: "Endpoint validation, header inspection, authorization testing, and mocks" }
+    ]
   },
   {
-    title: "State-Driven, Responsive Frontends",
-    description: "I architect React 19 SPAs with strict TypeScript interfaces and predictable state management, avoiding spaghetti code and ensuring fast rendering on mobile devices with low-end hardware.",
-    icon: "layout"
+    category: "Concepts",
+    description: "Software engineering principles and architectural patterns",
+    skills: [
+      { name: "REST APIs", highlight: "API Design", note: "HTTP verbs, status codes, payload structuring, and pagination" },
+      { name: "Authentication", highlight: "Identity Verification", note: "Session-based cookies, JWT tokens, and password hashing" },
+      { name: "Authorization", highlight: "Access Control", note: "Role-Based Access Control (RBAC) and permission decorators" },
+      { name: "CRUD", highlight: "Data Lifecycle", note: "Robust Create, Read, Update, Delete workflows across models" },
+      { name: "Responsive Design", highlight: "Multi-Device UX", note: "Fluid viewport adaptation for mobile, tablet, and desktop" }
+    ]
   }
 ];
-
-export const TECH_STACK = {
-  backend: [
-    { name: "Python", highlight: "Primary Language" },
-    { name: "Django", highlight: "Core Framework" },
-    { name: "Django REST Framework", highlight: "API Architecture" },
-    { name: "Flask", highlight: "Lightweight Services" }
-  ],
-  frontend: [
-    { name: "React 19", highlight: "Component SPAs" },
-    { name: "TypeScript", highlight: "Type Safety" },
-    { name: "JavaScript (ES6+)", highlight: "DOM & Async" },
-    { name: "HTML5 & CSS3", highlight: "Semantic Structure" },
-    { name: "Tailwind CSS", highlight: "Utility Styling" },
-    { name: "Vite", highlight: "Fast Build Tool" }
-  ],
-  database: [
-    { name: "PostgreSQL", highlight: "Production Relational DB" },
-    { name: "SQLite", highlight: "Dev & Lightweight Storage" }
-  ],
-  engineering: [
-    { name: "REST API Design", highlight: "CRUD & Pagination" },
-    { name: "JWT & 2FA Security", highlight: "httpOnly & TOTP" },
-    { name: "Role-Based Access (RBAC)", highlight: "Granular Permissions" },
-    { name: "Git & GitHub", highlight: "Version Control" },
-    { name: "Pytest & Vitest", highlight: "Automated Testing" },
-    { name: "Docker", highlight: "Containerization" },
-    { name: "Render & Vercel", highlight: "Cloud Deployment" }
-  ]
-};
 
 export const EXPERIENCE_DATA = [
   {
     role: "Full Stack Developer Intern",
     company: "Innoovatum Engineering & Technology LLP",
-    location: "Remote / Vijayapura",
-    period: "Jan 2026 – May 2026",
+    location: "Vijayapura / Remote",
+    period: "Feb 2024 – Apr 2024",
     credentialVerified: true,
     certificateTitle: "AI-Integrated Python-Django Full-Stack Development",
-    summary: "Completed industrial internship developing AI-integrated web applications, optimizing backend API latency, and deploying full-stack systems with automated tests.",
-    achievements: [
-      "Built and deployed robust Django REST Framework APIs with secure JWT authentication and role-based permissions.",
-      "Optimized ORM queries and database indices, reducing endpoint query response latency from 800ms to ~200ms on core routes.",
-      "Configured full-text search indexes on database tables, cutting search retrieval latency down to 0.3s.",
-      "Collaborated in agile sprint cycles using git feature branches, peer code reviews, and writing pytest test suites to prevent regression bugs."
+    certificateImage: "/assets/certificates/innoovatum_python_django_internship.jpg",
+    summary: "Completed industrial internship developing web applications with Python, Django, and React, focusing on REST API construction, database query performance, and full-stack integration.",
+    responsibilities: [
+      "Engineered backend RESTful APIs with Django REST Framework, implementing secure token authentication and role-based permissions.",
+      "Optimized relational database queries using Django ORM select_related() and composite indexes, cutting endpoint latency on high-frequency routes.",
+      "Built responsive, mobile-first frontend views using React.js and integrated them with backend endpoints via asynchronous HTTP requests.",
+      "Conducted automated API testing in Postman and wrote unit test routines using Pytest to ensure data contract integrity.",
+      "Collaborated in a Git feature-branch workflow with peer code reviews and clean commit conventions."
     ],
-    tech: ["Python", "Django", "DRF", "PostgreSQL", "React", "Pytest", "Git"]
+    tech: ["Python", "Django", "Django REST Framework", "PostgreSQL", "React.js", "Postman", "Git"]
+  },
+  {
+    role: "Full-Stack Developer (Client Project)",
+    company: "Royal Enterprises",
+    location: "Vijayapura, Karnataka",
+    period: "June 2026 – Present",
+    credentialVerified: true,
+    certificateTitle: "Commercial Web Platform Delivery",
+    summary: "Architected and delivered a commercial stock management portal and business website for a regional dealership specializing in solar products, inverters, batteries, and EV charging solutions.",
+    responsibilities: [
+      "Designed and developed a customer-facing product catalog displaying technical specifications for solar modules, inverters, and automotive/tubular batteries.",
+      "Implemented a stock tracking module that logs inward supplier shipments and outward sales to eliminate manual register discrepancies.",
+      "Engineered an automated scrap trade-in calculation feature that applies lead-acid battery exchange credits directly during checkout.",
+      "Created 1-click WhatsApp invoice generation, allowing sales staff to send instant digital receipts to customer phones.",
+      "Deployed frontend to Netlify with responsive UI testing across mobile and desktop devices."
+    ],
+    tech: ["React.js", "Python", "Django", "PostgreSQL", "REST APIs", "Tailwind CSS", "Netlify"]
   }
 ];
 
 export const EDUCATION_DATA = {
   degree: "Bachelor of Computer Applications (BCA)",
-  institution: "Kumudben Darbar College, Rani Channamma University, Belagavi",
-  period: "Completed June 2026",
-  gpa: "8.5 / 10.0",
-  certifications: [
-    { 
-      title: "Microsoft Copilot for Security", 
-      issuer: "Microsoft via Coursera", 
-      year: "Jul 2025", 
-      verifyUrl: "https://coursera.org/verify/YD42Y93U5L6V",
-      code: "YD42Y93U5L6V" 
-    },
-    { 
-      title: "AI-Integrated Python-Django Full-Stack", 
-      issuer: "Innoovatum Engineering & Technology", 
-      year: "May 2026", 
-      verifyUrl: null,
-      code: "Internship Completion" 
-    },
-    { 
-      title: "Developing Interpersonal Skills", 
-      issuer: "IBM via Coursera", 
-      year: "Oct 2025", 
-      verifyUrl: "https://coursera.org/verify/Z3KJALTAMU7H",
-      code: "Z3KJALTAMU7H" 
-    },
-    { 
-      title: "Data Analyst 101", 
-      issuer: "Simplilearn SkillUP", 
-      year: "Jul 2025", 
-      verifyUrl: null,
-      code: "8615099" 
-    }
-  ]
+  institution: "Kumudben Darbar College of BCA, Rani Channamma University, Belagavi",
+  period: "Coursework Completed (2023 – 2026)",
+  gpa: "8.5 / 10.0 (Cumulative GPA across completed semesters)",
+  statusNote: "Academic coursework and core computer science curriculum completed with strong academic standing (8.5/10.0 GPA). Completing final degree examination / backlog clearance while actively engineering production software.",
+  coreCoursework: [
+    "Database Management Systems (RDBMS & SQL)",
+    "Object-Oriented Programming (Python, C++, Java)",
+    "Data Structures & Algorithms",
+    "Web Application Development & Software Engineering",
+    "Computer Networks & Operating Systems"
+  ],
+  secondary: {
+    title: "Pre-University Course (PUC), Science",
+    institution: "Darbar Pre-University College, Vijayapura",
+    subjects: "Physics, Chemistry, Mathematics, Biology (PCMB)"
+  }
 };
 
 export const CERTIFICATIONS = [
   {
     id: "innoovatum-internship",
     title: "AI-Integrated Python-Django Full-Stack Development",
-    credentialType: "Industrial Internship",
+    credentialType: "Industrial Internship Certificate",
     issuer: "Innoovatum Engineering & Technology LLP",
     issuerShort: "Innoovatum",
     issuerOrg: "Engineering & Technology LLP, Vijayapura",
-    issueDate: "Jan 2026 – May 2026",
-    completedDate: "May 10, 2026",
-    signatories: "Shaukat Kotwal (CEO) & Abdul Raheem Sutar (CTO)",
-    sealText: "Innoovatum Engineering and Technology LLP VIJAYAPUR 586101",
+    issueDate: "2024",
     verificationUrl: null,
-    credentialId: "INNO-2026-FSD",
+    credentialId: "INNO-FSD",
     hasCode: true,
     category: "fullstack",
-    accentColor: "#3b82f6",
+    accentColor: "#38bdf8",
     issuerLogoType: "innoovatum",
     image: "/assets/certificates/innoovatum_python_django_internship.jpg",
-    description: "Successfully completed industrial internship in AI-Integrated Python-Django Full-Stack Development. Focused on engineering high-throughput REST APIs, database indexing, and full-stack software architecture.",
-    skills: ["Python", "Django", "Django REST Framework", "PostgreSQL", "Full-Stack Architecture", "TDD & Pytest", "ORM Optimization"],
+    description: "Industrial internship in AI-Integrated Python-Django Full-Stack Development. Validated hands-on development of REST APIs, database schema design, query latency optimization, and full-stack software architecture.",
+    skills: ["Python", "Django", "Django REST Framework", "PostgreSQL", "React.js", "Git", "REST APIs"],
     highlights: [
-      "Hands-on AI-integrated backend microservices & REST APIs",
-      "Cut database query response latency from 800ms to ~200ms",
-      "Signed by CEO Shaukat Kotwal & CTO Abdul Raheem Sutar"
+      "Hands-on full-stack development with Django and React.js",
+      "Optimized database query response times on core API endpoints",
+      "Signed by Innoovatum leadership team"
     ]
   },
   {
@@ -417,9 +408,6 @@ export const CERTIFICATIONS = [
     issuerShort: "Microsoft",
     issuerOrg: "Microsoft Authorized Curriculum",
     issueDate: "July 9, 2025",
-    completedDate: "July 9, 2025",
-    signatories: "Marni Baker Stein (Chief Content Officer, Coursera)",
-    sealText: "Coursera Course Certificate · Education for Everyone",
     verificationUrl: "https://coursera.org/verify/YD42Y93U5L6V",
     credentialId: "YD42Y93U5L6V",
     hasCode: true,
@@ -427,11 +415,11 @@ export const CERTIFICATIONS = [
     accentColor: "#0284c7",
     issuerLogoType: "microsoft",
     image: "/assets/certificates/microsoft_copilot_security.jpg",
-    description: "Online non-credit course authorized by Microsoft and offered through Coursera. Explores generative AI security architecture, natural language threat querying, prompt-driven incident response, and SOC workflow automation.",
-    skills: ["Microsoft Copilot", "Generative AI Security", "Threat Intelligence", "Incident Response", "Cloud Security Posture"],
+    description: "Course authorized by Microsoft through Coursera. Explores generative AI security architecture, prompt-driven incident analysis, threat intelligence querying, and security workflow assistance.",
+    skills: ["AI Security Architecture", "Prompt Engineering", "Threat Intelligence", "Incident Analysis"],
     highlights: [
       "Authorized and validated directly by Microsoft",
-      "Instant cryptographic verification on Coursera",
+      "Cryptographically verified on Coursera",
       "Credential ID: YD42Y93U5L6V"
     ]
   },
@@ -443,9 +431,6 @@ export const CERTIFICATIONS = [
     issuerShort: "IBM",
     issuerOrg: "IBM Skills Network",
     issueDate: "October 1, 2025",
-    completedDate: "October 1, 2025",
-    signatories: "Rav Ahuja (Global Program Director, IBM Skills Network)",
-    sealText: "Coursera Course Certificate · Education for Everyone",
     verificationUrl: "https://coursera.org/verify/Z3KJALTAMU7H",
     credentialId: "Z3KJALTAMU7H",
     hasCode: true,
@@ -453,8 +438,8 @@ export const CERTIFICATIONS = [
     accentColor: "#0f62fe",
     issuerLogoType: "ibm",
     image: "/assets/certificates/ibm_interpersonal_skills.jpg",
-    description: "Authorized by IBM and offered through Coursera. Develops essential workplace competencies including cross-functional engineering collaboration, active listening, technical conflict resolution, and agile team communication.",
-    skills: ["Cross-Functional Collaboration", "Technical Communication", "Active Listening", "Agile Team Dynamics", "Conflict Resolution"],
+    description: "Authorized by IBM and offered through Coursera. Develops essential workplace competencies including engineering collaboration, active listening, technical communication, and agile team dynamics.",
+    skills: ["Technical Communication", "Active Listening", "Agile Team Dynamics", "Collaboration"],
     highlights: [
       "Authorized by IBM Skills Network",
       "Direct Coursera verification: Z3KJALTAMU7H",
@@ -469,9 +454,6 @@ export const CERTIFICATIONS = [
     issuerShort: "Simplilearn",
     issuerOrg: "Simplilearn Solutions",
     issueDate: "July 12, 2025",
-    completedDate: "July 12, 2025",
-    signatories: "Krishna Kumar (CEO, Simplilearn)",
-    sealText: "Simplilearn SkillUP Certificate of Completion",
     verificationUrl: null,
     credentialId: "8615099",
     hasCode: true,
@@ -479,12 +461,11 @@ export const CERTIFICATIONS = [
     accentColor: "#f59e0b",
     issuerLogoType: "simplilearn",
     image: "/assets/certificates/simplilearn_data_analyst_101.jpg",
-    description: "Online course demonstrating initiative and practical mastery of foundational data analytics concepts, structured SQL queries, data wrangling pipelines, and analytical metric reporting.",
-    skills: ["Data Analytics", "SQL Queries", "Data Wrangling", "Exploratory Data Analysis", "Business Intelligence"],
+    description: "Practical course covering foundational data analytics principles, structured SQL queries, relational filtering, and data aggregation.",
+    skills: ["SQL Queries", "Data Aggregation", "Relational Filtering", "Data Analysis"],
     highlights: [
       "Official certificate code: 8615099",
-      "Signed by Simplilearn CEO Krishna Kumar",
-      "Validates core SQL and analytical reasoning skills"
+      "Validates core SQL query design and analytical reasoning"
     ]
   }
 ];
@@ -493,29 +474,62 @@ export const GITHUB_REPOS = [
   {
     name: "HisabPoint",
     url: "https://github.com/Mouiezuddin/HisabPoint",
-    description: "Digital Bahi Khata & Cloud Ledger with ACID transaction guarantees and 2FA lockout.",
-    tech: "React 19 · TypeScript · DRF · PostgreSQL",
-    stars: "Active"
+    description: "Digital Customer Ledger & Khata application built with React, Django REST Framework, and PostgreSQL.",
+    tech: "React.js · Python · DRF · PostgreSQL",
+    badge: "Production"
   },
   {
     name: "Stock_management-",
     url: "https://github.com/Mouiezuddin/Stock_management-",
-    description: "Battery, lighting, and solar equipment stock management ERP with warranty tracking.",
-    tech: "Django 5 · React 19 · Vite · Tailwind",
-    stars: "Active"
-  },
-  {
-    name: "Mouiezuddin_portfolio",
-    url: "https://github.com/Mouiezuddin/Mouiezuddin_portfolio",
-    description: "Production portfolio built with modern React, semantic styling, and zero bloat.",
-    tech: "React 19 · Vite · CSS3",
-    stars: "Live"
+    description: "Stock management & billing portal for battery, inverter, and solar equipment dealership.",
+    tech: "React.js · Django · PostgreSQL · REST",
+    badge: "Production"
   },
   {
     name: "Blog_platform",
     url: "https://github.com/Mouiezuddin/Blog_platform",
-    description: "Developer blogging platform deployed on Render with rich content taxonomies.",
-    tech: "Django · PostgreSQL · Bootstrap",
-    stars: "Live"
+    description: "Developer blogging platform deployed on Render with rich content taxonomies and PostgreSQL.",
+    tech: "Python · Django · PostgreSQL · Bootstrap",
+    badge: "Live"
+  },
+  {
+    name: "Calories_Counter",
+    url: "https://github.com/Mouiezuddin/Calories_Counter",
+    description: "Dietary nutrition and calorie tracker built with Django, SQLite, and vanilla JavaScript.",
+    tech: "Python · Django · SQLite · JavaScript",
+    badge: "Active"
+  }
+];
+
+export const ENGINEERING_PRINCIPLES = [
+  {
+    title: "Relational Schema Design & ACID Atomicity",
+    description: "In business software like HisabPoint and Royal Enterprises, financial numbers cannot tolerate partial writes or drift. I use relational constraints, foreign keys, and atomic database transaction blocks (@transaction.atomic) so balance updates either succeed together or roll back completely.",
+    icon: "database"
+  },
+  {
+    title: "Database Query Optimization & Indexing",
+    description: "Slow queries ruin counter checkout experiences. I profile SQL execution, eliminate N+1 query loops via select_related() and prefetch_related(), and apply composite indexes on frequently filtered columns to achieve snappy response times.",
+    icon: "bolt"
+  },
+  {
+    title: "Defensive Authentication & Access Control",
+    description: "Security is built into the architecture. I implement Role-Based Access Control (RBAC), password hashing, rate limiting, and session/JWT tokens to protect administrative actions from unauthorized access.",
+    icon: "lock"
+  },
+  {
+    title: "Clean RESTful API Contracts",
+    description: "I structure backend services with predictable HTTP verbs, appropriate status codes, granular DRF serializers, and clear error responses so frontends and third-party tools can consume endpoints reliably.",
+    icon: "api"
+  },
+  {
+    title: "State-Driven Component Architecture",
+    description: "On the frontend, I organize React.js code into modular, reusable components with predictable state flow, eliminating spaghetti code and keeping the application fast and responsive across mobile and desktop viewports.",
+    icon: "layout"
+  },
+  {
+    title: "Pragmatic Problem-Solving Focus",
+    description: "Rather than adding unnecessary dependencies or building over-engineered abstractions, I focus on shipping software that meets the real operational needs of users and clients.",
+    icon: "check"
   }
 ];

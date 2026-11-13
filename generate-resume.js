@@ -14,20 +14,21 @@ async function createResume() {
   const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
   const fontOblique = await pdfDoc.embedFont(StandardFonts.HelveticaOblique);
   
-  // Colors
-  const colorGold = rgb(245/255, 166/255, 35/255); // #f5a623
-  const colorBlack = rgb(15/255, 23/255, 42/255); // #0f172a
-  const colorDarkGrey = rgb(71/255, 85/255, 105/255); // #475569
+  // Design colors: professional slate & subtle gold/blue accent
+  const colorAccent = rgb(30/255, 64/255, 175/255); // #1e40af
+  const colorBlack = rgb(15/255, 23/255, 42/255);  // #0f172a
+  const colorDarkGrey = rgb(51/255, 65/255, 85/255); // #334155
+  const colorMuted = rgb(100/255, 116/255, 139/255); // #64748b
+  const colorRule = rgb(203/255, 213/255, 225/255); // #cbd5e1
   
-  let y = height - 40; // Start near the top margin
-  const marginX = 40;
-  const contentWidth = width - (marginX * 2); // 515.28
+  let y = height - 36; // Start near top
+  const marginX = 36;
+  const contentWidth = width - (marginX * 2);
   
-  // Helper functions
   function drawText(text, options = {}) {
     const {
       x = marginX,
-      fontSize = 9,
+      fontSize = 8.5,
       font = fontRegular,
       color = colorBlack,
       align = 'left'
@@ -52,24 +53,24 @@ async function createResume() {
   }
   
   function drawSectionHeader(title) {
-    y -= 12;
-    drawText(title.toUpperCase(), { fontSize: 10.5, font: fontBold, color: colorBlack });
-    y -= 4;
+    y -= 10;
+    drawText(title.toUpperCase(), { fontSize: 9.5, font: fontBold, color: colorAccent });
+    y -= 3;
     page.drawLine({
       start: { x: marginX, y: y },
       end: { x: width - marginX, y: y },
-      thickness: 1,
-      color: colorGold
+      thickness: 0.75,
+      color: colorRule
     });
-    y -= 10;
+    y -= 8;
   }
   
-  function drawBullet(text, indent = 12) {
+  function drawBullet(text, indent = 10) {
     page.drawCircle({
-      x: marginX + indent - 5,
-      y: y + 3,
-      size: 1.8,
-      color: colorGold
+      x: marginX + indent - 4,
+      y: y + 2.5,
+      size: 1.5,
+      color: colorAccent
     });
     
     const words = text.split(' ');
@@ -78,149 +79,147 @@ async function createResume() {
     
     for (let i = 0; i < words.length; i++) {
       const testLine = line + (line === '' ? '' : ' ') + words[i];
-      const testWidth = fontRegular.widthOfTextAtSize(testLine, 8.5);
+      const testWidth = fontRegular.widthOfTextAtSize(testLine, 8);
       if (testWidth > bulletContentWidth && i > 0) {
-        drawText(line, { x: marginX + indent, fontSize: 8.5 });
-        y -= 11;
+        drawText(line, { x: marginX + indent, fontSize: 8, color: colorDarkGrey });
+        y -= 9.5;
         line = words[i];
       } else {
         line = testLine;
       }
     }
-    drawText(line, { x: marginX + indent, fontSize: 8.5 });
-    y -= 11;
+    drawText(line, { x: marginX + indent, fontSize: 8, color: colorDarkGrey });
+    y -= 9.5;
   }
 
   // --- HEADER SECTION ---
-  drawText("MOUIEZUDDIN KILLEDAR", { fontSize: 20, font: fontBold, color: colorBlack, align: 'center' });
-  y -= 14;
+  drawText("MOUIEZUDDIN KILLEDAR", { fontSize: 18, font: fontBold, color: colorBlack, align: 'center' });
+  y -= 12;
   
-  drawText("Full Stack Python Developer | Django | Flask | React JS | REST API | AI Integration", { fontSize: 10, font: fontBold, color: colorGold, align: 'center' });
-  y -= 14;
+  drawText("Junior Full-Stack Python Developer  |  Python · Django · DRF · React.js · PostgreSQL", { fontSize: 9, font: fontBold, color: colorAccent, align: 'center' });
+  y -= 10;
   
-  const contactLine1 = "Bijapur, Karnataka  |  +91 8867555660  |  killedarmouiezuddin@gmail.com";
-  drawText(contactLine1, { fontSize: 8.5, color: colorDarkGrey, align: 'center' });
-  y -= 11;
+  const contactLine1 = "Bijapur, Karnataka, India  |  +91 8867555660  |  killedarmouiezuddin@gmail.com";
+  drawText(contactLine1, { fontSize: 8, color: colorDarkGrey, align: 'center' });
+  y -= 9;
   
-  const contactLine2 = "GitHub: github.com/Mouiezuddin  |  Portfolio: mouiezuddin.runs-on.dev";
-  drawText(contactLine2, { fontSize: 8.5, color: colorDarkGrey, align: 'center' });
-  y -= 8;
+  const contactLine2 = "Portfolio: mouiezuddin.runs-on.dev  |  GitHub: github.com/Mouiezuddin  |  LinkedIn: linkedin.com/in/mouiezuddin-killedar";
+  drawText(contactLine2, { fontSize: 8, color: colorDarkGrey, align: 'center' });
+  y -= 4;
   
   // --- CAREER OBJECTIVE ---
-  drawSectionHeader("Career Objective");
+  drawSectionHeader("Professional Summary");
   const summaryText = 
-    "Motivated BCA graduate (GPA: 8.5/10.0) with hands-on internship and freelance experience building and deploying 8+ production-grade web applications. Skilled in Python, Django, Flask, React JS, PostgreSQL, JWT/RBAC authentication, and CI/CD pipelines. Eager to join a product company or MNC as a Software Engineer or Full Stack Developer and grow through real-world engineering challenges.";
+    "Junior Full-Stack Python Developer with hands-on internship and commercial project experience engineering database-backed web applications, scalable REST APIs, and responsive React.js interfaces. Proficient in Python, Django, Django REST Framework, Flask, React.js, PostgreSQL, and MySQL. Passionate about database integrity, clean RESTful architecture, and building practical tools that solve real business problems.";
   
   const summaryWords = summaryText.split(' ');
-  let currentLine = '';
+  let curLine = '';
   for (let i = 0; i < summaryWords.length; i++) {
-    const testLine = currentLine + (currentLine === '' ? '' : ' ') + summaryWords[i];
-    const testWidth = fontRegular.widthOfTextAtSize(testLine, 8.5);
+    const testLine = curLine + (curLine === '' ? '' : ' ') + summaryWords[i];
+    const testWidth = fontRegular.widthOfTextAtSize(testLine, 8);
     if (testWidth > contentWidth && i > 0) {
-      drawText(currentLine, { fontSize: 8.5, color: colorDarkGrey });
-      y -= 11.5;
-      currentLine = summaryWords[i];
+      drawText(curLine, { fontSize: 8, color: colorDarkGrey });
+      y -= 9.5;
+      curLine = summaryWords[i];
     } else {
-      currentLine = testLine;
+      curLine = testLine;
     }
   }
-  drawText(currentLine, { fontSize: 8.5, color: colorDarkGrey });
-  y -= 8;
+  drawText(curLine, { fontSize: 8, color: colorDarkGrey });
+  y -= 4;
   
   // --- TECHNICAL SKILLS ---
   drawSectionHeader("Technical Skills");
   
-  drawText("Backend Systems:", { fontSize: 9.5, font: fontBold, color: colorBlack });
-  drawText("Python, Django, Flask, Django REST Framework (DRF), PostgreSQL, SQLite, JWT Auth, RBAC", { x: marginX + 110, fontSize: 9.5, color: colorDarkGrey });
-  y -= 14;
-  
-  drawText("Frontend & Web:", { fontSize: 9.5, font: fontBold, color: colorBlack });
-  drawText("React 19, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Bootstrap 5", { x: marginX + 110, fontSize: 9.5, color: colorDarkGrey });
-  y -= 14;
-  
-  drawText("DevOps & Testing:", { fontSize: 9.5, font: fontBold, color: colorBlack });
-  drawText("Docker, Git & GitHub, GitHub Actions, Render Cloud, Postman Client, Pytest (TDD), Vitest", { x: marginX + 110, fontSize: 9.5, color: colorDarkGrey });
-  y -= 14;
-  
+  const skillsData = [
+    { label: "Languages:", list: "Python, JavaScript (ES6+), HTML, CSS, SQL" },
+    { label: "Backend:", list: "Django, Django REST Framework (DRF), Flask" },
+    { label: "Frontend:", list: "React.js, Bootstrap, Modern Responsive Design" },
+    { label: "Databases:", list: "PostgreSQL, MySQL, SQLite" },
+    { label: "Tools:", list: "Git, GitHub, Postman, Vite" },
+    { label: "Concepts:", list: "REST APIs, Authentication, Authorization (RBAC), CRUD Lifecycle, Relational Schema Design" }
+  ];
+
+  skillsData.forEach(s => {
+    drawText(s.label, { fontSize: 8, font: fontBold, color: colorBlack });
+    drawText(s.list, { x: marginX + 80, fontSize: 8, color: colorDarkGrey });
+    y -= 10;
+  });
+  y -= 2;
+
   // --- WORK EXPERIENCE ---
-  drawSectionHeader("Professional Experience");
-  
-  // Company & Position
-  drawText("Full Stack Developer Intern", { fontSize: 10, font: fontBold });
-  drawText("02/2024 – 04/2024", { fontSize: 9, font: fontBold, align: 'right' });
-  y -= 12;
-  drawText("Innoovatum (Remote)", { fontSize: 9.5, font: fontOblique, color: colorDarkGrey });
-  y -= 12;
-  
-  drawText("Backend & Security:", { fontSize: 8.5, font: fontBold, color: colorBlack });
-  drawText("Django 5.0, Flask, Django REST Framework (DRF), REST API Design, JWT, OAuth2, RBAC, CSRF", { x: marginX + 115, fontSize: 8.5, color: colorDarkGrey });
-  y -= 12;
-
-  drawText("Frontend & PWA:", { fontSize: 8.5, font: fontBold, color: colorBlack });
-  drawText("React 19, Vite 6, Tailwind CSS, Bootstrap 5, PWA Workbox, Responsive Design", { x: marginX + 115, fontSize: 8.5, color: colorDarkGrey });
-  y -= 12;
-
-  drawText("AI & DevOps Tools:", { fontSize: 8.5, font: fontBold, color: colorBlack });
-  drawText("scikit-learn, Generative AI, Git, GitHub, Docker, Postman, Pytest TDD, Render, Netlify, GitHub Actions", { x: marginX + 115, fontSize: 8.5, color: colorDarkGrey });
-  y -= 8;
-  
-  // --- WORK & FREELANCE EXPERIENCE ---
   drawSectionHeader("Experience");
   
-  // Experience 1: Freelance
-  drawText("Freelance Full Stack Developer", { fontSize: 9.5, font: fontBold });
-  drawText("June 2026 – Present", { fontSize: 8.5, font: fontBold, align: 'right' });
-  y -= 11;
-  drawText("Royal Enterprises (Client Project)", { fontSize: 8.5, font: fontOblique, color: colorDarkGrey });
-  y -= 11;
-  drawBullet("Delivered enterprise-grade inventory & sales portal for battery, inverter, solar, and lighting retail client; live at royalenterprise.netlify.app");
-  drawBullet("Built real-time stock tracking with threshold alerts, audit-logged stock in/out, and WhatsApp digital receipts for customer purchases & warranties.");
-  drawBullet("Engineered BatteryHub AI Sales Analyst chatbot (English & Hinglish) for sales, best-seller, dead-stock, and reorder insights.");
-  drawBullet("Implemented Instagram-style installable PWA with offline support, plus JWT token rotation, RBAC (Admin/Staff), and brute-force lockout security.");
-  y -= 4;
+  // Role 1: Innoovatum
+  drawText("Full Stack Developer Intern", { fontSize: 8.5, font: fontBold });
+  drawText("Feb 2024 – Apr 2024", { fontSize: 8, font: fontBold, align: 'right' });
+  y -= 9.5;
+  drawText("Innoovatum Engineering & Technology LLP  |  Vijayapura / Remote", { fontSize: 8, font: fontOblique, color: colorMuted });
+  y -= 9.5;
+  drawBullet("Built and tested backend RESTful APIs using Django REST Framework with secure token authentication and role-based permissions.");
+  drawBullet("Optimized PostgreSQL queries via Django ORM select_related() and composite indexes, slashing query latency on high-frequency routes.");
+  drawBullet("Developed responsive frontend views with React.js, connecting them with backend services via asynchronous HTTP client requests.");
+  drawBullet("Practiced automated API testing in Postman and wrote unit test routines using Pytest to maintain data contract stability.");
+  y -= 3;
 
-  // Experience 2: Internship
-  drawText("Full Stack Developer Intern", { fontSize: 9.5, font: fontBold });
-  drawText("January 2026 – May 2026", { fontSize: 8.5, font: fontBold, align: 'right' });
-  y -= 11;
-  drawText("Innoovatum (Remote)", { fontSize: 8.5, font: fontOblique, color: colorDarkGrey });
-  y -= 11;
-  drawBullet("Built and deployed 8 production-grade web applications using Django and Flask; served 2,000+ combined monthly active users with 99.5% uptime across 3+ live deployments.");
-  drawBullet("Developed secure REST APIs with DRF using JWT authentication, OAuth2, and RBAC across 5 user roles (Admin, Librarian, Member, Customer, Staff).");
-  drawBullet("Optimized PostgreSQL queries via Django ORM indexing and raw SQL refactoring — reduced API latency from 800ms to 200ms (75%) and search time from 2.5s to 0.3s (88%).");
-  drawBullet("Practiced TDD with Pytest, validated APIs via Postman, and maintained CI/CD pipelines using GitHub Actions with feature-branch Git workflow and peer code reviews.");
-  y -= 4;
-  
+  // Role 2: Royal Enterprises
+  drawText("Full-Stack Developer (Client Project)", { fontSize: 8.5, font: fontBold });
+  drawText("June 2026 – Present", { fontSize: 8, font: fontBold, align: 'right' });
+  y -= 9.5;
+  drawText("Royal Enterprises (Solar, Inverter & Battery Dealership)  |  Vijayapura, Karnataka", { fontSize: 8, font: fontOblique, color: colorMuted });
+  y -= 9.5;
+  drawBullet("Architected commercial web platform and stock management portal for regional battery, inverter, and solar equipment dealership; live at royalenterprise.netlify.app.");
+  drawBullet("Engineered real-time stock movement tracking for inward distributor shipments and outward counter sales to eliminate manual register discrepancies.");
+  drawBullet("Built automated scrap battery core trade-in calculation feature, applying old lead-acid battery exchange credits directly during checkout.");
+  drawBullet("Created 1-click WhatsApp invoice generation, allowing sales staff to send instant digital receipts to customer mobile phones.");
+  y -= 3;
+
   // --- PROJECTS ---
-  drawSectionHeader("Featured Production Projects");
+  drawSectionHeader("Featured Projects");
   
   // Project 1 - HisabPoint
-  drawText("HisabPoint — Digital Bahi Khata & Cloud Ledger", { fontSize: 10, font: fontBold });
-  drawText("React 19, TypeScript, Django REST, PostgreSQL, Vite", { fontSize: 8.5, font: fontOblique, color: colorDarkGrey, align: 'right' });
-  y -= 12;
-  drawBullet("Architected ACID-compliant cloud ledger for retail merchants using DRF & PostgreSQL atomic transactions. Optimized checkout query latency to <200ms via composite indexing. Dual-enforced 2FA fraud lockout security.");
+  drawText("HisabPoint — Digital Customer Ledger & Khata", { fontSize: 8.5, font: fontBold });
+  drawText("React.js, Django, DRF, PostgreSQL, Vercel", { fontSize: 7.5, font: fontOblique, color: colorMuted, align: 'right' });
+  y -= 9.5;
+  drawBullet("Engineered a mobile-first digital accounting ledger for retail merchants. Features customer ledger management, paid and due tracking, and customer transaction records. Enforced Django atomic transaction blocks (@transaction.atomic) to guarantee ACID compliance and eliminate balance drift. Live: hisab-point.vercel.app | Repo: github.com/Mouiezuddin/HisabPoint");
   y -= 2;
 
   // Project 2 - Library Management System
-  drawText("Library Management System", { fontSize: 10, font: fontBold });
-  drawText("Django, SQLite, Bootstrap 5, Render", { fontSize: 8.5, font: fontOblique, color: colorDarkGrey, align: 'right' });
-  y -= 12;
-  drawBullet("Replaced manual spreadsheet workflows, supporting 50+ concurrent users with multi-role RBAC. Built full CRUD operations and full-text search, reducing search latency to 0.3s. Deployed live on Render.");
+  drawText("Library Management System", { fontSize: 8.5, font: fontBold });
+  drawText("Python, Django, SQLite, Bootstrap, Render", { fontSize: 7.5, font: fontOblique, color: colorMuted, align: 'right' });
+  y -= 9.5;
+  drawBullet("Multi-role book catalog and issuance portal with role-based access control (Admin, Librarian, Member), book search indexing, and automated overdue penalty calculations. Deployed live on Render: librarymanagementsystem-0cty.onrender.com.");
   y -= 2;
-  
-  // Project 3 - Restaurant Ordering System
-  drawText("Restaurant Ordering & Backend System", { fontSize: 10, font: fontBold });
-  drawText("Django, PostgreSQL, React JS, REST API", { fontSize: 8.5, font: fontOblique, color: colorDarkGrey, align: 'right' });
-  y -= 12;
-  drawBullet("E-commerce application with menu catalogs, inventory tracking, secure order placement, and integration of payment routing. Supports 3 custom user roles and handles up to 500+ concurrent order pipelines.");
 
+  // Project 3 - Developer's Tale Blog Platform
+  drawText("Developer's Tale — Technical Blog Platform", { fontSize: 8.5, font: fontBold });
+  drawText("Python, Django, PostgreSQL, Bootstrap, Render", { fontSize: 7.5, font: fontOblique, color: colorMuted, align: 'right' });
+  y -= 9.5;
+  drawBullet("Engineered technical blogging platform with rich-text publishing, category filtering, user commenting, and relational PostgreSQL database deployed live on Render: developers-tale.onrender.com.");
+  y -= 3;
+
+  // --- EDUCATION ---
+  drawSectionHeader("Education");
   
+  drawText("Bachelor of Computer Applications (BCA)", { fontSize: 8.5, font: fontBold });
+  drawText("Coursework Completed (2023 – 2026)", { fontSize: 8, font: fontBold, align: 'right' });
+  y -= 9.5;
+  drawText("Kumudben Darbar College of BCA, Rani Channamma University, Belagavi  |  Cumulative GPA: 8.5 / 10.0", { fontSize: 8, color: colorDarkGrey });
+  y -= 9;
+  drawText("Status: Core curriculum completed with 8.5 GPA; completing final degree clearance examination.", { fontSize: 7.5, font: fontOblique, color: colorMuted });
+  y -= 9.5;
+
+  drawText("Pre-University Course (PUC), Science (PCMB)", { fontSize: 8, font: fontBold });
+  drawText("Darbar Pre-University College, Vijayapura", { fontSize: 7.5, color: colorMuted, align: 'right' });
+  y -= 4;
+
   // --- CERTIFICATIONS ---
   drawSectionHeader("Certifications");
   
-  drawBullet("Generative AI for Everyone – Coursera, 2025 (AI fundamentals, prompt engineering, AI integration)");
-  drawBullet("Microsoft Copilot for Security – Microsoft, 2025 (AI-powered security, threat detection)");
-  drawBullet("Data Analyst 101 – Certificate Code: 8615099 (SQL, Python, data analysis, visualization)");
+  drawBullet("Microsoft Copilot for Security — Microsoft via Coursera (Credential ID: YD42Y93U5L6V)");
+  drawBullet("AI-Integrated Python-Django Full-Stack Development — Innoovatum Engineering & Technology LLP");
+  drawBullet("Developing Interpersonal Skills — IBM via Coursera (Credential ID: Z3KJALTAMU7H)");
+  drawBullet("Data Analyst 101 — Simplilearn SkillUP (Certificate Code: 8615099)");
   
   // Save PDF
   const pdfBytes = await pdfDoc.save();
